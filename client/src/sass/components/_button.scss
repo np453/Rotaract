@@ -1,0 +1,14 @@
+.btn_ {
+    outline:none !important;
+    border:none !important;
+    color:#000;
+    background-color:#fff;
+    font-family: $font-1;
+    border-radius: 6px ;
+    padding:0.5rem;
+    width:10rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    &:hover {
+        opacity:0.9;
+    }
+}   

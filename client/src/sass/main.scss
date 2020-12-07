@@ -1,0 +1,9 @@
+@import "./abstracts/variables";
+@import "./components/topSection"; 
+@import "./components/button"; 
+@import "./components/description"; 
+@import "./components/form";
+@import "./components/footer";
+html {
+    scroll-behavior: smooth !important;
+}
