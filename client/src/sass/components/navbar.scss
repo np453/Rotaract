@@ -1,0 +1,32 @@
+
+
+.navbar {
+    padding-top:1rem !important; 
+}
+.navbar-nav {
+    span {
+        cursor: pointer;
+    }
+}
+
+.brand {
+    font-size:36px !important;
+    font-family:$font-1;
+}
+.nav__link {
+    background-color: #FBF1D9;
+    padding: 1.4rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family:$font-1;
+    animation-name:viewGalleryButton;
+    animation-duration:0.3s;
+    animation-direction: alternate;
+    transition: all 0.3s ease-in-out; 
+    &:hover {
+        cursor: pointer;
+        padding-bottom:2rem;
+        transition:all 0.3s;
+    }
+
+}

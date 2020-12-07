@@ -8,6 +8,10 @@ import { motion } from 'framer-motion';
 import ScrollReveal from 'scrollreveal';
 import Form from '../components/form';
 import Footer from '../components/footer';
+import svg1 from '../assets/rotaract_svg_1.svg';
+import shareExpimg from '../assets/topSectionImg.png';
+import shareExpimg2 from '../assets/shareExp2.png';
+import shareSectionImg from '../assets/shareSectionImg.png';
 export default class Homepage extends Component {
 
     form = React.createRef();
@@ -15,50 +19,61 @@ export default class Homepage extends Component {
     render() {
         return (
             <div className="container-fluid p-0">
-                <motion.div initial={{x:300, opacity:0}} animate={{x:0, opacity:1}} transition={{delay:0.4}} className="pl-5 pt-4 mt-3 pr-0 topSection_container container-fluid">
-                    <div className="pl-5 pt-4 logo-banner">
-                    <div className="view_gallery_button">
-                        <div className="row">
-                            <div className="col-md-8"></div>
-                            <div className="col-md-4">
-                                <Link to="/gallery"><span className="">View gallery</span></Link>
-                            </div>
+                <div className="container-fluid">
+                <div className="container-lg p-0">
+                <nav className="navbar navbar-expand-lg m-0 p-0">
+                    <span className="navbar-brand brand">Rotaract Club MNNIT</span>
+                    <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#landingPageNavbar" aria-controls="landingPageNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="icon-bar top-bar"></span>
+                        <span className="icon-bar middle-bar"></span>
+                        <span className="icon-bar bottom-bar"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="landingPageNavbar">
+                        <div className="navbar-nav ml-auto align-items-center">
+                            <Link onClick={this.executeFormScroll}><span className="mr-3 nav__link">Join us</span></Link>
+                            <Link to="/gallery"><span className="nav__link">View gallery</span></Link>
                         </div>
                     </div>
-                    <h1>Rotaract Club</h1>
-                    <h3>MNNIT</h3>
-                    <button className="btn_ mt-3" onClick={this.executeFormScroll}>Learn more</button>
-                    <div className="row m-0">
-                        <div className="col-md-8"></div>
-                        <div className="col-md-4 d-flex justify-content-center">
-                        <img src={logo} className="rotaract__logo"></img>
-                        </div>
-                        <div className="col-md-6">
-                        </div>
-                        <div className="col-md-6 d-flex justify-content-end p-0">
-                            <img className="img img-fluid" src={hill} alt=""/>
-                        </div>
+                </nav>
+                </div>   
+            </div>
+
+            {/*intro section*/}
+            <div className="container intro__section d-flex justify-content-center">
+                <div className="row">
+                    <span className="col-md-12 d-flex justify-content-center intro__section__heading">Let’s share our experience together</span>
+                    <span className="col-md-12 d-flex justify-content-center intro__section__para">We are ... text that will explain about the club</span>
+                    <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
+                <div className="row d-flex justify-content-center">
+                    <img src={shareExpimg} className="img img-fluid" alt=""/>
+                    <img src={shareExpimg2} className="img2 img img-fluid w-100" alt=""/>
+                </div>
+            </div>
+                </div>
+            </div>
+
+            {/*our vision*/}
+            <div className="container our__vision__section mt-5 mb-5">
+                <h1 className="main__heading">Our vision</h1>
+                <div className="col-md-5">
+                <span className="section__para">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Nulla blanditiis quo culpa repudiandae recusandae quisquam, quidem sed 
+                    exercitationem praesentium nobis eum aut tempore dolorem reiciendis similique quia! Ipsam, voluptates vitae.
+                </span>
+                </div>
+            </div>
+            {/*share your rotary experience section*/}
+            <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
+                <div className="row">
+                    <div className="col-md-6 p-0">
+                        <img src={shareSectionImg} className="img img-fluid w-100" alt=""/>
                     </div>
-                    </div>
-                </motion.div>
-                <div className="container rounded-lg description mb-5 p-5">
-                    <div className="row d-flex justify-content-center">
-                        <h1 className="description__heading">Who we are</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Illum, asperiores dolorum? Deserunt ea dolore eligendi aperiam necessitatibus 
-                            rerum qui earum praesentium ducimus dolorum soluta, minima suscipit iusto, molestiae pariatur maxime.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br/><br/>
-                            Illum, asperiores dolorum? Deserunt ea dolore eligendi aperiam necessitatibus 
-                            rerum qui earum praesentium ducimus dolorum soluta, minima suscipit iusto, molestiae pariatur maxime.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br/><br/>
-                            Illum, asperiores dolorum? Deserunt ea dolore eligendi aperiam necessitatibus 
-                            rerum qui earum praesentium ducimus dolorum soluta, minima suscipit iusto, molestiae pariatur maxime.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Illum, asperiores dolorum? Deserunt ea dolore eligendi aperiam necessitatibus<br/>
-                            rerum qui earum praesentium ducimus dolorum soluta, minima suscipit iusto, molestiae pariatur maxime.
-                        </p>
+                    <div className="col-md-6 shareExpSection d-flex justify-content-center align-items-center">
+                        <h1>Share your experience with us</h1>
                     </div>
                 </div>
+            </div>
                 <div ref={this.form}><Form /></div>
                 <Footer />
             </div>

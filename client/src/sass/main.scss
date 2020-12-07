@@ -4,6 +4,17 @@
 @import "./components/description"; 
 @import "./components/form";
 @import "./components/footer";
+@import "./components/navbar";
+@import "./components/introSection";
+@import "./components/ourVision";
+@import "./components/shareExp";
 html {
     scroll-behavior: smooth !important;
+}
+a {
+    color:rgba(#000, 0.8) !important;
+    text-decoration: none !important;
+}
+::selection {
+    background-color: rgba(0, 231, 217, 0.2);
 }

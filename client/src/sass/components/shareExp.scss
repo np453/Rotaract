@@ -1,0 +1,74 @@
+.share__experience__section {
+    // background: url("../../assets/shareExp_img.png");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    font-family:$font-1;
+    position: relative;
+    .shareExp__heading {
+        position:absolute;
+        font-family: $font-1;
+        color: #C3C2C2;
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing:0.4rem;
+        top:40%;
+
+    }
+    .img2 {
+        display:none;
+    }
+    .shareExpSection {
+        background-color: #15789D;
+    }
+    h1 {
+        color: #E9E9E9;
+    }
+}
+
+@media (min-width:121px) and (max-width:600px) {
+    .share__experience__section {
+        img {
+            display: none;
+        }
+        .img2 {
+            display:block;
+        }
+        .shareExp__heading {
+            font-size: 1.5rem;
+            top:40%;
+    
+        }
+    }
+}
+
+
+@media (min-width:600px) and (max-width:780px) {
+    .share__experience__section {
+        .shareExp__heading {
+            font-size: 1.7rem;
+            top:40%;
+    
+        }
+    }
+}
+
+@media (min-width:780.98px) and (max-width:991.98px) {
+    .share__experience__section {
+        .shareExp__heading {
+            font-size: 2rem;
+            top:40%;
+    
+        }
+    }
+}
+
+
+@media (min-width:992px) and (max-width:1228px) {
+    .share__experience__section {
+        .shareExp__heading {
+            font-size: 2.3rem;
+            top:40%;
+    
+        }
+    }
+}

@@ -1,6 +1,11 @@
 .form__container {
     // height:60vh;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    color:#B4B4B4;
+    background:url("../../assets/form_photo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1c1c1c;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     h1 {
         font-family:$font-1;
         font-size:48px;
@@ -26,13 +31,13 @@
 }
 
 label {
-    color: #5C5C5C;
+    color: #B4B4B4;
     font-family: $font-1;
     font-weight: 600;
     font-size: 17px;
 }
 input {
-    background-color: #fff;
+    background-color: transparent;
     color: #A5A5A5;
     outline: none !important;
     box-shadow: none !important;
@@ -46,7 +51,7 @@ input {
 }
 
 textarea {
-    background-color: #fff;
+    background-color: transparent;
     color: #A5A5A5;
     border: none;
     outline: none;
@@ -60,21 +65,21 @@ textarea {
 }
 
 ::-webkit-input-placeholder { /* Edge */
-    color: #b1b0b0;
+    color: rgba(#b1b0b0, 0.5);
     font-family: $font-1;
     font-weight: 700;
     text-align: center;
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #b1b0b0;
+    color: rgba(#b1b0b0, 0.5);
     font-family: $font-1;
     font-weight: 700;
     text-align: center;
   }
   
   ::placeholder {
-    color: #b1b0b0;
+    color: rgba(#b1b0b0, 0.5);
     font-family: $font-1;
     font-weight: 700;
     text-align: center;
