@@ -1,77 +1,89 @@
 .share__experience__section {
-    // background: url("../../assets/shareExp_img.png");
-    // background-position: center;
-    // background-repeat: no-repeat;
     font-family:$font-1;
-    position: relative;
-    .shareExp__heading {
-        position:absolute;
-        font-family: $font-1;
-        color: #C3C2C2;
-        font-size: 3rem;
-        font-weight: 500;
-        letter-spacing:0.4rem;
-        top:40%;
-
-    }
-    .img2 {
-        display:none;
-    }
     .shareExpSection {
         background-color: #15789D;
+        h1 {
+            color: #E9E9E9;
+            padding:2rem;
+        }
     }
-    h1 {
-        color: #E9E9E9;
+    
+}
+
+@media (min-width:121px) and (max-width:375px) {
+    .shareExpSection {
+        h1 {
+            font-size:1.4rem;
+        }
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem ;
     }
 }
 
-@media (min-width:121px) and (max-width:600px) {
-    .share__experience__section {
-        img {
-            
+@media (min-width:375.98px) and (max-width:550px) {
+    .shareExpSection {
+        h1 {
+            font-size:1.7rem;
         }
-        .top_img{
-            display:none;
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem ;
+    }
+}
+
+@media (min-width:550.98px) and (max-width:650px) {
+    .shareExpSection {
+        h1 {
+            font-size:1.9rem;
         }
-        .img2 {
-            display:block;
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem ;
+    }
+}
+
+@media (min-width:650.98px) and (max-width:767.98px) {
+    .shareExpSection {
+        h1 {
+            font-size:2.2rem;
         }
-        .shareExp__heading {
-            font-size: 1.5rem;
-            top:40%;
-    
-        }
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem ;
     }
 }
 
 
-@media (min-width:600px) and (max-width:780px) {
-    .share__experience__section {
-        .shareExp__heading {
-            font-size: 1.7rem;
-            top:40%;
-    
+@media (min-width:768px) and (max-width:991.98px) {
+    .shareExpSection {
+        h1 {
+            font-size:1.8rem;
         }
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem 1.7rem ;
     }
 }
 
-@media (min-width:780.98px) and (max-width:991.98px) {
-    .share__experience__section {
-        .shareExp__heading {
-            font-size: 2rem;
-            top:40%;
-    
+@media (min-width:992px) and (max-width:1202px) {
+    .shareExpSection {
+        h1 {
+            font-size:2rem;
         }
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem ;
     }
 }
 
-
-@media (min-width:992px) and (max-width:1228px) {
-    .share__experience__section {
-        .shareExp__heading {
-            font-size: 2.3rem;
-            top:40%;
-    
+@media (min-width:1202px) {
+    .shareExpSection {
+        h1 {
+            font-size:2.5rem;
         }
+    }
+    .btn_ {
+        margin:0 1.7rem 1.7rem ;
     }
 }

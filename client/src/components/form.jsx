@@ -45,8 +45,8 @@ export default class Form extends Component {
         console.log(data);
         return (
             <div className="container mt-5 rounded-lg form__container">
-                <h1 className="p-4">Build up your presence in our Initiative</h1>
-                <h3 className="p-4">Want to contribute to the society and become a part of the initiative.</h3>
+                <h1>Build up your presence in our Initiative</h1>
+                <h3>Want to contribute to the society and become a part of the initiative.</h3>
                 <form className="mt-5 p-4" onSubmit={this.handleSubmit}>
                         <div className="row form-group m-0">
                             <label className="mr-3 form-labels" htmlFor="">Hello my name is</label>

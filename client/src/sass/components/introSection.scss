@@ -1,5 +1,5 @@
 .intro__section {
-    margin-top:10rem;
+    margin-top:5rem;
     font-family:$font-1;
     .intro__section__heading {
         font-size:4rem;
@@ -9,3 +9,53 @@
     }
 }
 
+
+@media (min-width:121px) and (max-width:375px) {
+    .intro__section {
+    margin-top:3rem;
+    .intro__section__heading {
+        font-size:1.5rem;
+    }
+    .intro__section__para {
+        font-size:0.8rem;
+    }
+    }
+
+}
+
+@media (min-width:375.98px) and (max-width:550px) {
+    .intro__section {
+    margin-top:3rem;
+    .intro__section__heading {
+        font-size:2rem;
+    }
+    .intro__section__para {
+        font-size:1.1rem;
+    }
+    }
+}
+
+@media (min-width:550.98px) and (max-width:767.98px) {
+    .intro__section {
+    margin-top:4rem;
+    .intro__section__heading {
+        font-size:2.5rem;
+    }
+    .intro__section__para {
+        font-size:1.3rem;
+    }
+    }
+
+}
+
+@media (min-width:768px) and (max-width:991.98px) {
+    .intro__section {
+    margin-top:4rem;
+    .intro__section__heading {
+        font-size:3rem;
+    }
+    .intro__section__para {
+        font-size:1.5rem;
+    }
+    }
+}

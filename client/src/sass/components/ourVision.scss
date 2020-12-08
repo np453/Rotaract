@@ -5,3 +5,23 @@
         font-family: $font-1;
     }
 }
+
+
+@media (min-width:121px) and (max-width:375px) {
+    .main__heading {
+        font-size:2rem !important;
+    }
+
+}
+
+@media (min-width:550.98px) and (max-width:767.98px) {
+    .main__heading {
+        font-size:2.5rem !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:991.98px) {
+    .main__heading {
+        font-size:2.7rem !important;
+    }
+}

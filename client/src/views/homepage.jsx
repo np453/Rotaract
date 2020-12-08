@@ -24,12 +24,16 @@ export default class Homepage extends Component {
     }
     form = React.createRef();
     executeFormScroll = () => this.form.current.scrollIntoView()
+    componentDidMount() {
+        ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
+    }
+    
     render() {
         return (
             <div className="container-fluid p-0">
                 <div className="container-fluid">
-                <div className="container-lg p-0">
-                <nav className="navbar navbar-expand-lg m-0 p-0">
+                <div className="container-lg  p-0">
+                <nav className="navbar  navbar-expand-lg m-0 p-0">
                     <span className="navbar-brand brand">Rotaract Club MNNIT</span>
                     <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#landingPageNavbar" aria-controls="landingPageNavbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="icon-bar top-bar"></span>
@@ -49,12 +53,12 @@ export default class Homepage extends Component {
             {/*intro section*/}
             <div className="container intro__section d-flex justify-content-center">
                 <div className="row">
-                    <span className="col-md-12 d-flex justify-content-center intro__section__heading">Let’s share our experience together</span>
+                    <Typist cursor={{show:false}} avgTypingDelay={50} ><span className="col-md-12 d-flex justify-content-center intro__section__heading">Let’s share our experience together</span></Typist>
                     <span className="col-md-12 d-flex justify-content-center intro__section__para">We are ... text that will explain about the club</span>
                     <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
                 <div className="row d-flex justify-content-center">
                     <img src={shareExpimg} className="img img-fluid top_img" alt=""/>
-                    <img src={shareExpimg2} className="img2 img img-fluid w-100" alt=""/>
+                    {/* <img src={shareExpimg2} className="img2 img img-fluid w-100" alt=""/> */}
                 </div>
             </div>
                 </div>
@@ -76,29 +80,29 @@ export default class Homepage extends Component {
                 <h1 className="main__works__heading">Our Works</h1>
                 <div className="col-md-12">
                   <div className="row">
-                      <div className="col-md-4 img_work2">
-                          <img src={works_edu} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Supproting Education</h1>
+                      <div className="col-md-4 our_work_container">
+                          <img src={works_edu} className="w-100 img img-fluid img_works"/>
+                          <h1 className="img_placeholder">Supporting Education</h1>
                       </div>
-                      <div className="col-md-4 img_work2">
+                      <div className="col-md-4 our_work_container">
                           <img src={shareExpimg2} className="img img-fluid img_works"/>
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
-                      <div className="col-md-4 img_work2">
+                      <div className="col-md-4 our_work_container">
                           <img src={shareExpimg2} className="img img-fluid img_works" />
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
                   </div>
                   <div className="row mt-4">
-                      <div className="col-md-4 img_work2">
+                      <div className="col-md-4 our_work_container">
                           <img src={shareExpimg2} className="img img-fluid img_works"/>
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
-                      <div className="col-md-4 img_work2">
+                      <div className="col-md-4 our_work_container">
                           <img src={shareExpimg2} className="img img-fluid img_works"/>
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
-                      <div className="col-md-4 img_work2">
+                      <div className="col-md-4 our_work_container">
                           <img src={shareExpimg2} className="img img-fluid img_works" />
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
@@ -113,7 +117,15 @@ export default class Homepage extends Component {
                         <img src={shareSectionImg} className="img img-fluid w-100" alt=""/>
                     </div>
                     <div className="col-md-6 shareExpSection d-flex justify-content-center align-items-center">
-                        <h1>Share your experience with us</h1>
+                        <div className="row">
+                            <div className="col-md-12">
+                            <h1>Share your experience with us</h1>
+                        
+                            </div>
+                            <div className="col-md-12">
+                            <button className="btn_">Share your rotary story</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
