@@ -12,9 +12,16 @@ import svg1 from '../assets/rotaract_svg_1.svg';
 import shareExpimg from '../assets/topSectionImg.png';
 import shareExpimg2 from '../assets/shareExp2.png';
 import shareSectionImg from '../assets/shareSectionImg.png';
+import worksimg1 from '../assets/works_img_1.jpg';
+import works_edu from '../assets/works_Edu.jpg';
 
 export default class Homepage extends Component {
+    state={
 
+    }
+    handleloadmore=()=>{
+
+    }
     form = React.createRef();
     executeFormScroll = () => this.form.current.scrollIntoView()
     render() {
@@ -46,7 +53,7 @@ export default class Homepage extends Component {
                     <span className="col-md-12 d-flex justify-content-center intro__section__para">We are ... text that will explain about the club</span>
                     <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
                 <div className="row d-flex justify-content-center">
-                    <img src={shareExpimg} className="img img-fluid" alt=""/>
+                    <img src={shareExpimg} className="img img-fluid top_img" alt=""/>
                     <img src={shareExpimg2} className="img2 img img-fluid w-100" alt=""/>
                 </div>
             </div>
@@ -67,35 +74,36 @@ export default class Homepage extends Component {
             {/*Our Works*/}
             <div className="container our__works__section mt-5 mb-5">
                 <h1 className="main__works__heading">Our Works</h1>
-                <div className="col-md-5">
+                <div className="col-md-12">
                   <div className="row">
-                      <div className="col-md-4">
+                      <div className="col-md-4 img_work2">
+                          <img src={works_edu} className="img img-fluid img_works"/>
+                          <h1 className="img_placeholder">Supproting Education</h1>
+                      </div>
+                      <div className="col-md-4 img_work2">
                           <img src={shareExpimg2} className="img img-fluid img_works"/>
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
-                      <div className="col-md-4">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4">
+                      <div className="col-md-4 img_work2">
                           <img src={shareExpimg2} className="img img-fluid img_works" />
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
                   </div>
                   <div className="row mt-4">
-                      <div className="col-md-4">
+                      <div className="col-md-4 img_work2">
                           <img src={shareExpimg2} className="img img-fluid img_works"/>
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
-                      <div className="col-md-4">
+                      <div className="col-md-4 img_work2">
                           <img src={shareExpimg2} className="img img-fluid img_works"/>
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
-                      <div className="col-md-4">
+                      <div className="col-md-4 img_work2">
                           <img src={shareExpimg2} className="img img-fluid img_works" />
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
                   </div>
+                  <span className="load_more" onClick={this.handleloadmore()}>Load More...</span>
                 </div>
             </div>
             {/*share your rotary experience section*/}

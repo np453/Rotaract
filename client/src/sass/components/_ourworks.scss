@@ -1,17 +1,41 @@
 .img_works{
-    border: 5px solid aqua;
+    border: 5px solid rgb(0, 0, 0);
+    position: relative;
+    min-height: 230px;
+    max-height: 230px;
+    margin-top: 2rem;
     transition: border-width 0.3s linear;
+    opacity:0.8;
     &:hover{
-        opacity:0.8;
+        opacity:0.6;
         border-width: 0;
-
+        
     }
     
+}
+.img_work2{
+    
+    &:hover{
+        .img_placeholder{
+            transition: all 0.3s linear;
+            top:80%;
+            left:20%;
+            
+        }
+    }
 }
 .img_placeholder{
     position: absolute;
     font-size: 1rem;
+    font-weight: 600;
     font-family: $font-1;
+    top:50%;
+    left:20%;
+    color:#C3C2C2;
+    animation-name:imgPlaceHolder;
+    animation-duration:0.3s;
+    animation-direction: alternate;
+    transition: all 0.3s ease-in-out;
 }
 .our__works__section{
     border-left: 5px solid #042C95;
@@ -21,4 +45,16 @@
         font-family: $font-1;
     }
 
+}
+.load_more{
+    display:none;
+}
+
+@keyframes imgPlaceHolder {
+    from {
+        top:50%;
+    }
+    to {
+        top:90%;
+    }
 }

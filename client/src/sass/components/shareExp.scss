@@ -28,7 +28,10 @@
 @media (min-width:121px) and (max-width:600px) {
     .share__experience__section {
         img {
-            display: none;
+            
+        }
+        .top_img{
+            display:none;
         }
         .img2 {
             display:block;
