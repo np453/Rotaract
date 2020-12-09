@@ -30,62 +30,63 @@
             opacity:0.8;
         }
     }
-}
-
-label {
-    color: #B4B4B4;
-    font-family: $font-1;
-    font-weight: 600;
-    font-size: 17px;
-}
-input {
-    background-color: transparent;
-    color: #A5A5A5;
-    outline: none !important;
-    box-shadow: none !important;
-    border: none;
-    text-align: center;
-    border-bottom: 2px solid rgba(116, 116, 116, 0.3);
-    &:focus {
-        border-bottom: 2px solid rgba(#006828, 0.6);
-        transition: all 0.2s ease-in-out;
+    label {
+        color: #B4B4B4;
+        font-family: $font-1;
+        font-weight: 600;
+        font-size: 17px;
     }
-}
-
-textarea {
-    background-color: transparent;
-    color: #A5A5A5;
-    border: none;
-    outline: none;
-    resize: none !important;
-    border-left: 3px solid #4A4A4A;
-    &:focus {
-        border-left: 3px solid rgba(#006828, 0.6);
-        transition: all 0.2s ease-in-out;
+    input {
+        background-color: transparent;
+        color: #A5A5A5;
+        outline: none !important;
+        box-shadow: none !important;
+        border: none;
+        text-align: center;
+        border-bottom: 2px solid rgba(116, 116, 116, 0.3);
+        &:focus {
+            border-bottom: 2px solid rgba(#006828, 0.6);
+            transition: all 0.2s ease-in-out;
+        }
     }
     
+    textarea {
+        background-color: transparent;
+        color: #A5A5A5;
+        border: none;
+        outline: none;
+        resize: none !important;
+        border-left: 3px solid #4A4A4A;
+        &:focus {
+            border-left: 3px solid rgba(#006828, 0.6);
+            transition: all 0.2s ease-in-out;
+        }
+        
+    }
+    
+    ::-webkit-input-placeholder { /* Edge */
+        color: rgba(#b1b0b0, 0.5);
+        font-family: $font-1;
+        font-weight: 700;
+        text-align: center;
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: rgba(#b1b0b0, 0.5);
+        font-family: $font-1;
+        font-weight: 700;
+        text-align: center;
+      }
+      
+      ::placeholder {
+        color: rgba(#b1b0b0, 0.5);
+        font-family: $font-1;
+        font-weight: 700;
+        text-align: center;
+    }
 }
 
-::-webkit-input-placeholder { /* Edge */
-    color: rgba(#b1b0b0, 0.5);
-    font-family: $font-1;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: rgba(#b1b0b0, 0.5);
-    font-family: $font-1;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  ::placeholder {
-    color: rgba(#b1b0b0, 0.5);
-    font-family: $font-1;
-    font-weight: 700;
-    text-align: center;
-}
+
 
 
 

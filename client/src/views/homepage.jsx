@@ -123,7 +123,7 @@ export default class Homepage extends Component {
                         
                             </div>
                             <div className="col-md-12">
-                            <button className="btn_">Share your rotary story</button>
+                            <Link to="/story"><button className="btn_" >Share your rotary story</button></Link>
                             </div>
                         </div>
                     </div>
