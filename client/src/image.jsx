@@ -4,42 +4,64 @@ import axios from 'axios';
 
 class Image extends React.Component {
 
-  constructor(props) {
-      super(props);
-      this.state ={
-          file: null
+      state ={
+        selectedFile: null,
       };
-      this.onFormSubmit = this.onFormSubmit.bind(this);
-      this.onChange = this.onChange.bind(this);
-  }
-  onFormSubmit(e){
+
+  onFormSubmit = async(e) => {
       e.preventDefault();
-      const formData = new FormData();
-      formData.append('file',this.state.file);
-      const config = {
-          headers: {
-              'content-type': 'multipart/form-data'
-          }
-      };
-      axios.post("http://localhost:4444/upload",formData,config)
-          .then((response) => {
-              alert("The file is successfully uploaded");
-          }).catch((error) => {
-      });
+      const data = new FormData() 
+      data.append('file', this.state.selectedFile)
+    //   const config = {
+    //       headers: {
+    //           'content-type': 'multipart/form-data'
+    //       }
+    //   };
+    axios.post("http://localhost:4444/upload", data, {
+        })
+        .then(res => { 
+        console.log(res.statusText)
+    })
+    //   console.log(response)
   }
 
-  onChange(e) {
-      this.setState({file:e.target.files});
+  onChangeHandler=event=>{
+    let file = event.target.files[0]
+    this.setState({ selectedFile: file})
   }
+    onClickHandler = () => {
+      const data = new FormData() 
+        data.append('file', this.state.selectedFile)
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        };
+      axios.post("http://localhost:4444/upload", data, config)
+        .then(res => { // then print response status
+          console.log('upload success')
+        })
+        .catch(err => { // then print response status
+            console.log('upload fail')
+        })
+      }
+  
 
   render() {
-    {console.log(this.state.file)}
+    console.log(this.state.selectedFile)
       return (
-          <form onSubmit={this.onFormSubmit}>
-              <h1>File Upload</h1>
-              <input type="file" className="custom-file-input" name="file" onChange= {this.onChange} />
-              <button className="upload-button" type="submit">Upload to DB</button>
-          </form>
+        <div className="container">
+        <div className="row">
+          <div className="offset-md-3 col-md-6">
+             <div className="form-group files">
+              <label>Upload Your File </label>
+              <input type="file" className="form-control" onChange={this.onChangeHandler}/>
+            </div>  
+            <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
+
+        </div>
+    </div>
+    </div>
       )
   }
 }
