@@ -61,7 +61,7 @@ export default class Form extends Component {
                             <label className="mr-3 form-labels" htmlFor="">and you can reach me at</label>
                             <input id="email" name="email" value={data.email} onChange={this.handleChange} placeholder="Email Address" className="mb-5" type="text"/>
                         </div>
-                        <button className="btn_ form_btn_">Let’s Do it</button>
+                        <button className="btn_ ">Let’s Do it</button>
                     </form>
             </div>
         )

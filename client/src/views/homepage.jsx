@@ -77,7 +77,9 @@ export default class Homepage extends Component {
                 </div>
             </div>
             {/*Our Works*/}
-                <Suspense fallback={<div>Loading Our Works</div>}>
+                <Suspense fallback={
+                <div>Loading...</div>
+                }>
                     <Workcomponent />
                 </Suspense>
             {/* <div className="container our__works__section mt-5 mb-5">

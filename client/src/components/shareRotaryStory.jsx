@@ -14,7 +14,7 @@ export default class ShareRotaryStory extends Component {
                                         <h4>tell us about your experiences 
                                             <br/>Don’t think much just post<br/>your thoughts :)
                                         </h4>
-                                        <img src={ShareStoryImg} className="img img-fluid float-right mt-5" alt=""/>
+                                        <img src={ShareStoryImg} className="form_image img img-fluid float-right mt-5" alt=""/>
                                     </div>
                                     <div className="col-md-1">
                                         <span className="middle_line"></span>

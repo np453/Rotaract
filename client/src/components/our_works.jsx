@@ -7,8 +7,8 @@ import svg1 from '../assets/rotaract_svg_1.svg';
 import shareExpimg from '../assets/topSectionImg.png';
 import shareExpimg2 from '../assets/shareExp2.png';
 import shareSectionImg from '../assets/shareSectionImg.png';
-import worksimg1 from '../assets/works_img_1.jpg';
-import works_edu from '../assets/works_Edu.jpg';
+import img1 from '../assets/works_img_1.jpg';
+import img from '../assets/works_Edu.jpg';
 
 class Ourworks extends Component {
     render() {
@@ -18,18 +18,22 @@ class Ourworks extends Component {
                 <h1 className="main__works__heading">Our Works</h1>
                 <div className="col-md-12">
                   <div className="row">
-                      <div className="col-md-4 our_work_container">
-                          <img src={works_edu} className="w-100 img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Supporting Education</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works" />
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
+                    <div className="col-md-4">
+                            <div className="works_wrapper">
+                                <img src={img} className="img img-fluid" alt=""/>
+                                <h5 className="text-center">Supporting education</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-4"><div className="works_wrapper">
+                                <img src={img} className="img img-fluid" alt=""/>
+                                <h5 className="text-center">Supporting education</h5>
+                            </div>
+                        </div>
+                        <div className="col-md-4"><div className="works_wrapper">
+                                <img src={img} className="img img-fluid" alt=""/>
+                                <h5 className="text-center">Supporting education</h5>
+                            </div>
+                        </div>
                   </div>
                   {/* <div className="row mt-4">
                       <div className="col-md-4 our_work_container">
