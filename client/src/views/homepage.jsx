@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,Suspense,lazy } from 'react'
 import { Link } from 'react-router-dom';
 import '../sass/main.scss';
 import logo from '../assets/logo.png';
@@ -14,6 +14,7 @@ import shareExpimg2 from '../assets/shareExp2.png';
 import shareSectionImg from '../assets/shareSectionImg.png';
 import worksimg1 from '../assets/works_img_1.jpg';
 import works_edu from '../assets/works_Edu.jpg';
+const Workcomponent = React.lazy(()=>import('../components/our_works'));
 
 export default class Homepage extends Component {
     state={
@@ -76,7 +77,10 @@ export default class Homepage extends Component {
                 </div>
             </div>
             {/*Our Works*/}
-            <div className="container our__works__section mt-5 mb-5">
+                <Suspense fallback={<div>Loading Our Works</div>}>
+                    <Workcomponent />
+                </Suspense>
+            {/* <div className="container our__works__section mt-5 mb-5">
                 <h1 className="main__works__heading">Our Works</h1>
                 <div className="col-md-12">
                   <div className="row">
@@ -93,23 +97,9 @@ export default class Homepage extends Component {
                           <h1 className="img_placeholder">Edu</h1>
                       </div>
                   </div>
-                  <div className="row mt-4">
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works" />
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                  </div>
-                  <span className="load_more" onClick={this.handleloadmore()}>Load More...</span>
+                  
                 </div>
-            </div>
+            </div> */}
             {/*share your rotary experience section*/}
             <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
                 <div className="row">
