@@ -72,7 +72,6 @@ app.post("/contact",async(req,res)=>{
       res.status(400).send(err);
   }
 })
-app.listen(port,console.log(`Server started at ${port}`));
 
 app.get('/img/:imgId', async(req, res) => {
    const imData = await File.findById({_id:req.params.imgId})
