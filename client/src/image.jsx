@@ -1,22 +1,24 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-
+import { Document, Page } from 'react-pdf';
 class Image extends React.Component {
 
       state ={
         selectedFile: null,
       };
 
+      componentDidMount = async() => {
+          const {data} = await axios.get('http://localhost:4444/img/5fd1374ed580d4051fd39355')
+          console.log(data)
+          this.setState({selectedFile:data})
+      }
+      
+
   onFormSubmit = async(e) => {
       e.preventDefault();
       const data = new FormData() 
       data.append('file', this.state.selectedFile)
-    //   const config = {
-    //       headers: {
-    //           'content-type': 'multipart/form-data'
-    //       }
-    //   };
     axios.post("http://localhost:4444/upload", data, {
         })
         .then(res => { 
@@ -61,6 +63,7 @@ class Image extends React.Component {
 
         </div>
     </div>
+    
     </div>
       )
   }

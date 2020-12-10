@@ -64,7 +64,6 @@ app.get('/img/:imgId', async(req, res) => {
    console.log(imData.Img.data.buffer)
          // console.log(results.Img.data.buffer); //<-- Output below
    res.setHeader('content-type', imData.Img.contentType);
-   const binaryString = 
    res.send(Buffer.from(imData.Img.data.buffer, 'base64'));
    // res.setHeader('content-type', im.contentType);
    // res.send(im.Img);
