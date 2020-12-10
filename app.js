@@ -1,57 +1,62 @@
-const express =require('express');
-const app=express();
-const cors = require("cors");
+const express = require('express');
+const app = express();
+const multer = require('multer')
+const cors = require('cors');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const nodemailer = require('nodemailer');
-const AWS = require('aws-sdk');
-const path = require("path");
-const multer = require("multer");
-const contact=require("./model/contact") 
-require("./model/image")
-const File = mongoose.model("file");
-const router = express.Router();
-const port=4444;
+const fs = require('fs');
+const File = require("./model/image")
+const PORT = 4444;
 dotenv.config();
+
+//Middlewares
 app.use(cors());
-app.use(express.json());
-app.use(express.static("client/build"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
-
+//connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 
-
+//multer disk storage
 const storage = multer.diskStorage({
-    destination: "./public/",
-    filename: function(req, file, cb){
-       cb(null,"IMAGE-" + Date.now() + path.extname(file.originalname));
+    destination: function (req, file, cb) {
+      cb(null, 'public')
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + '-' +file.originalname )
     }
- });
- const upload = multer({
-    storage: storage,
-    limits:{fileSize: 1000000},
- }).single("myfile");
- 
- const obj =(req,res) => {
-    upload(req, res, () => {
-       console.log("Request ---", req.body);
-       console.log("Request file ---", req.body.file);//Here you get file.
-       const file = new File();
-       file.meta_data = req.body.file;
-       file.save().then(()=>{
-       res.send({message:"uploaded successfully"})
-       })
-       /*Now do where ever you want to do*/
-    });
- }
- 
- router.post("/upload", obj);
- app.use(router);
+  })
+  
+const upload = multer({ storage: storage }).array('file')
+app.post('/upload',function(req, res) {
 
-app.get("/",(req,res)=>{
+    upload(req, res, async (err) => {
+      // const file = new File();
+      //  file.meta_data = req.body.file;
+      //  file.save().then(()=>{
+      //  res.send({message:"uploaded successfully"})
+      //  })
+      console.log(req.files[0].filename)
+      let fullpath = 'public/'+req.files[0].filename;
+      let imgData  = fs.readFileSync(fullpath).toString('base64')
+      let file = new File()
+      file.Img.data = Buffer(imgData)
+      file.Img.contentType = req.files[0].mimetype;
+      const savedFile = await file.save()
+      res.send(savedFile)
+      
+        if (err instanceof multer.MulterError) {
+            return res.status(500).json(err)
+          // A Multer error occurred when uploading.
+        } else if (err) {
+            return res.status(500).json(err)
+          // An unknown error occurred when uploading.
+        } 
+        
+        return res.status(200).send(req.file)
+        // Everything went fine.
+      })
 });
 app.post("/contact",async(req,res)=>{
    const newalter = new contact({
@@ -68,3 +73,17 @@ app.post("/contact",async(req,res)=>{
   }
 })
 app.listen(port,console.log(`Server started at ${port}`));
+
+app.get('/img/:imgId', async(req, res) => {
+   const imData = await File.findById({_id:req.params.imgId})
+   console.log(imData.Img.data.buffer)
+         // console.log(results.Img.data.buffer); //<-- Output below
+   res.setHeader('content-type', imData.Img.contentType);
+   res.send(Buffer.from(imData.Img.data.buffer, 'base64'));
+   // res.setHeader('content-type', im.contentType);
+   // res.send(im.Img);
+});
+
+app.listen(PORT, function() {
+    console.log('App running on port 4444');
+});

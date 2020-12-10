@@ -1,28 +1,4 @@
-.imgWorks_wrapper {
-    position: relative;
-    .img_placeholder{
-        position: absolute;
-        // background-color:rgba(#c4c4c4, 0.3);
-        font-size: 1rem;
-        font-weight: 600;
-        font-family: $font-1;
-        bottom:-20%;
-        left:25%;
-        color:#000;
-        animation-name:imgPlaceHolder;
-        animation-duration:0.3s;
-        animation-direction: alternate;
-        transition: all 0.3s ease-in-out;
-    }
-    .img_works{
-        position: relative;
-        top:0;
-        margin-top: 2rem;
-        transition: border-width 0.3s linear;
-        opacity:0.8; 
-    }
-}
-.works_wrapper {
+.works_wrapper {    
     font-family:$font-1;
     opacity: 0.9;
     padding: 1rem;
@@ -30,24 +6,6 @@
     &:hover {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         transform: scale(1.05);
-    }
-}
-
-
-.our_work_container{
-    // background-color: #fff;  
-    transition:all 0.2s;
-        &:hover {
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            transform: scale(1.05);
-        }
-    &:hover{
-        .img_placeholder{
-            transition: all 0.3s linear;
-            // top:80%;
-            // left:20%;
-            
-        }
     }
 }
 
@@ -60,19 +18,6 @@
     }
 
 }
-.load_more{
-    display:none;
-}
-
-@keyframes imgPlaceHolder {
-    from {
-        top:50%;
-    }
-    to {
-        top:90%;
-    }
-}
-
 
 @media (min-width:121px) and (max-width:375px) {
     .main__works__heading {
