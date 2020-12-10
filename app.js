@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const AWS = require('aws-sdk');
 const path = require("path");
 const multer = require("multer");
+const contact=require("./model/contact") 
 require("./model/image")
 const File = mongoose.model("file");
 const router = express.Router();
@@ -52,4 +53,18 @@ const storage = multer.diskStorage({
 
 app.get("/",(req,res)=>{
 });
+app.post("/contact",async(req,res)=>{
+   const newalter = new contact({
+      name:req.body.name,
+      email:req.body.email,
+      description:req.body.description,
+      source:req.body.source
+  })
+  try{
+      const savedUser = await newalter.save();
+      res.send(savedUser);
+  }catch(err) {
+      res.status(400).send(err);
+  }
+})
 app.listen(port,console.log(`Server started at ${port}`));
