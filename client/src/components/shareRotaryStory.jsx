@@ -17,8 +17,8 @@ export default class ShareRotaryStory extends Component {
         this.setState({ data });
     };
 
-    handleSubmit = e => {
-        const {data} = this.state.data
+    handleSubmit = async(e) => {
+        const {data} = this.state.data;
         e.preventDefault();
         const payload = {
             name  : data.name,
@@ -26,6 +26,16 @@ export default class ShareRotaryStory extends Component {
             title : data.title,
             story : data.story 
         }
+        const {data:formData}=  await axios.post('/rotary_story',payload);
+        console.log(formData);
+        this.setState({
+            data:{
+                name:"",
+                email:"",
+                title:"",
+                story:""
+            }
+        })
     }
     
     render() {
