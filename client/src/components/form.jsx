@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ScrollReveal from 'scrollreveal';
-import axios from 'axios';
+import axios from '../axios';
 export default class Form extends Component {
 
     state = {
@@ -28,18 +28,17 @@ export default class Form extends Component {
             description:data.description, 
             source:data.source
         }
-        const {data:formData}=  await axios.post('/form',payload);
+        const {data:formData}=  await axios.post('/contact',payload);
         console.log(formData);
         this.setState({
             data: {
                 name:"",
-                organization:"",
                 description:"",
                 email:"",
                 source:""
             }
         })
-        
+
     }
     render() {
         let data = this.state.data;
