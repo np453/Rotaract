@@ -125,6 +125,41 @@
             border-bottom-right-radius: 8px;
             border-bottom-left-radius: 8px;
             }
+            input {
+                display: none;
+            }
+            label {
+                position: relative;
+                .file_upload_button {
+                    position: absolute;
+                    right: 12px;
+                    bottom: 0px;
+                }
+                span {
+                    position: absolute;
+                    bottom: 0;
+                    left: 10px;
+                    transition: all 0.3s ease;
+                    display: none;
+                }
+                &:hover {
+                    span {
+                        display: block;
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+
+            .chosenFile {
+                text-align: right;
+                    padding: 0.4rem;
+                    padding-right: 0.6rem;
+                    padding-left: 0.6rem;
+                    color: rgba(#fff, 0.7);
+                    // background-color: rgba(#c4c4c4, 0.3);
+                    border-radius: 18px;   
+            }
+        
     }
     .story_title_input {
         input {
@@ -160,7 +195,22 @@
     }
     
 }
-
+.btn_post_story {
+    position: relative;
+    span {
+        top: 0;
+        left: 120%;
+        color:rgba(#fff, 0.6);
+        position: absolute;
+        display: none;
+    }
+    &:hover {
+        span {
+            width: 100%;
+            display: block;
+        }
+    }
+}
 .toHome {
     margin-top: 1.3rem;
     font-family: $font-1;
@@ -217,10 +267,13 @@
     }
 }
 
+// .Toastify__toast-container {
+//     background-color: rgba(#00145C, 0.4) !important;
+// } 
 
 @media (min-width:121px) and (max-width:375px) {
     .story_container {
-        width: 83%;
+        width: 100%;
         margin: 0 auto;
     }
     .form_heading {
@@ -250,12 +303,30 @@
         }
     }
 
+
 }
 
 
 @media (min-width:375.98px) and (max-width:550px) {
+    
+    .btn_post_story {
+        position: relative;
+        span {
+            bottom: 0 !important;
+            right: 120% !important;
+            color:rgba(#fff, 0.6);
+            position: absolute;
+            display: none;
+        }
+        &:hover {
+            span {
+                width: 100%;
+                display: none;
+            }
+        }
+    }
     .story_container {
-        width: 83%;
+        width: 100%;
         margin: 0 auto;
     }
     .form_heading {
@@ -289,8 +360,24 @@
 
 
 @media (min-width:550.98px) and (max-width:767.98px) {
+    .btn_post_story {
+        position: relative;
+        span {
+            top: 0;
+            // left: 120%;
+            color:rgba(#fff, 0.6);
+            position: absolute;
+            display: none;
+        }
+        &:hover {
+            span {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
     .story_container {
-        width: 83%;
+        width: 88%;
         margin: 0 auto;
     }
     .form_heading {
@@ -436,4 +523,16 @@
         }
     }
 
+}
+
+
+@media screen and (max-width:375px) {
+    .story__section {
+        label {
+            span {
+                display: none !important;
+            }
+
+        }
+}
 }

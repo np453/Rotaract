@@ -22,6 +22,7 @@
     "react-pdf": "^5.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-toastify": "^6.2.0",
     "react-typist": "^2.0.5",
     "rsuite": "^4.8.5",
     "sass": "^1.29.0",
@@ -52,5 +53,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4444/"
+  "proxy": "http://localhost:4444"
 }

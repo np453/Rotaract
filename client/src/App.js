@@ -5,6 +5,7 @@ import Gallery from  './components/gallery';
 import Admin from './components/admin';
 import ShareRotaryStory from './components/shareRotaryStory';
 import Image from './image'
+import Blog from './components/blogs';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/admin" component={Admin} />
           <Route path="/story" component={ShareRotaryStory} />
           <Route path="/image" component={Image} />
+          <Route path="/blog" component={Blog} />
         </switch>
       </Router>
       

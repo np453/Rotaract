@@ -13,7 +13,7 @@ const story = new mongoose.Schema({
     title:String,
     story:String,
     files:[fileSchema],
-    moment:String
+    // moment:String
 })
 
 const userSchema = new mongoose.Schema({

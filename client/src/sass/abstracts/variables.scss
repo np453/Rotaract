@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@font-face {
+    font-family: font4;
+    src: url('./font_4.otf');
+}
 $font-1:Ubuntu;
 $font-2:Lato;
 $font-3:Berkshire Swash;
+$font-4:font4;

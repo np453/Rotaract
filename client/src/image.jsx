@@ -27,11 +27,11 @@ class Image extends React.Component {
     //   console.log(response)
   }
 
-  onChangeHandler=event=>{
-    let file = event.target.files[0]
+  onChangeHandler= e =>{
+    let file = e.target.files[0]
     this.setState({ selectedFile: file})
   }
-    onClickHandler = () => {
+  onClickHandler = () => {
       const data = new FormData() 
         data.append('file', this.state.selectedFile)
         const config = {

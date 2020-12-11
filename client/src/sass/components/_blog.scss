@@ -1,0 +1,95 @@
+.blog__left_section {
+    padding-top: 5rem;
+    height: 100vh;
+    padding-left: 0.1rem;
+    background-color: #1A1A1A;
+    color: #E1E1E1;
+    .blog__main_heading {
+        font-family: $font-4;
+        font-size:44px;
+        line-height: 1.3;
+    }
+    font-family: $font-1;
+    .blog__club_name {
+        font-size: 23px;
+        font-weight: 800;
+        line-height: 2.2;
+    }
+    .blog__write_your_story {
+        cursor: pointer;
+        background: linear-gradient(190.32deg, #A2FACF 5.82%, #64ACFF 100%);
+        .fa-arrow-right {
+            padding-left: 0.3rem;
+            transition: all 0.3s ease-in-out;
+        }
+        margin-bottom: 1.5rem;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        font-size: 22px;
+        &:hover {
+            .fa-arrow-right {
+                padding-left: 0.7rem;
+            }
+        }
+    }
+    .blog__view_recent_blog {
+        cursor: pointer;
+        background: linear-gradient(90.32deg, #FF7170 5.82%, #FFE57F 100%);
+        margin-bottom: 1.5rem;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900;
+        font-size: 22px;
+    }
+    .blog__back_to_home {
+        cursor: pointer;
+        .fa-arrow-left {
+            padding-right: 0.3rem;
+            transition: all 0.3s ease-in-out;
+        }
+        font-size: 22px;
+        font-weight: 900;
+        &:hover {
+            .fa-arrow-left {
+                padding-right: 0.7rem;
+            }
+        }
+
+    }
+
+}
+
+//timeline styling (left line)
+.rs-timeline-item-dot {
+    &:before {
+        border-radius: 8px !important;
+        background-color: #0CA7EA !important;
+        width: 13px;
+        height: 13px;
+    }
+    
+}
+// .timeline-container {
+//     height: 80vh;
+// }
+/*timeline tail*/
+.rs-timeline-item-tail {
+    width: 5px;
+    background-color: #0CA7EA !important;
+}
+.rs-timeline-item {
+    // background-color: #ffc600;
+    color: #0CA7EA;
+    font-family:$font-1;
+    font-weight: 800;
+    // height: 120px;
+}
+
+
+//media queries
+@media (min-width:121px) and (max-width:375px) {
+    .blog__left_section {
+        display: none;
+    }
+}
