@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const fs = require('fs');
 const File = require("./model/image")
-const contactModel = require("./model/contact")
+const contact = require("./model/contact")
 const story = require("./model/story")
 const PORT = 4444;
 dotenv.config();
@@ -62,7 +62,7 @@ app.post('/upload',function(req, res) {
 });
 // Join us section
 app.post("/contact",async(req,res)=>{
-   const contact = new contactModel({
+   const contact = new C({
       name:req.body.name,
       email:req.body.email,
       description:req.body.description,
@@ -70,7 +70,7 @@ app.post("/contact",async(req,res)=>{
   })
   try{
       const savedUser = await contact.save();
-      console.log(savedUser);
+      res.send(savedUser);
   }catch(err) {
       res.status(400).send(err);
   }
