@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const fs = require('fs');
 const File = require("./model/image")
-// const contactModel = require("./model/contact")
-// const story = require("./model/story")
+const contactModel = require("./model/contact")
+const story = require("./model/story")
 const PORT = 4444;
 dotenv.config();
 const uploadRoute = require('./routes/fileUpload')
@@ -62,36 +62,36 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 //       })
 // });
 // Join us section
-// app.post("/contact",async(req,res)=>{
-//    console.log(req.data)
-//    const contact = new contactModel({
-//       name:req.body.name,
-//       email:req.body.email,
-//       description:req.body.description,
-//       source:req.body.source
-//   })
-//   try{
-//       const savedUser = await contact.save();
-//       res.status(200)
-//   }catch(err) {
-//       res.status(400).send(err);
-//   }
-// })
+app.post("/contact",async(req,res)=>{
+   console.log(req.data)
+   const contact = new contactModel({
+      name:req.body.name,
+      email:req.body.email,
+      description:req.body.description,
+      source:req.body.source
+  })
+  try{
+      const savedUser = await contact.save();
+      res.status(200)
+  }catch(err) {
+      res.status(400).send(err);
+  }
+})
 // Share Rotary story section
-// app.post("/rotary_story",async(req,res)=>{
-//    const newalter = new story({
-//       name:req.body.name,
-//       email:req.body.email,
-//       title:req.body.title,
-//       story:req.body.story
-//   })
-//   try{
-//       const savedUser = await newalter.save();
-//       res.send(savedUser);
-//   }catch(err) {
-//       res.status(400).send(err);
-//   }
-// })
+app.post("/rotary_story",async(req,res)=>{
+   const newalter = new story({
+      name:req.body.name,
+      email:req.body.email,
+      title:req.body.title,
+      story:req.body.story
+  })
+  try{
+      const savedUser = await newalter.save();
+      res.status(200);
+  }catch(err) {
+      res.status(400).send(err);
+  }
+})
 
 // app.get('/img/:imgId', async(req, res) => {
 //    const imData = await File.findById({_id:req.params.imgId})
