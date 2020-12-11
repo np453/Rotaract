@@ -10,6 +10,8 @@ const File = require("./model/image")
 const User = require('./model/user')
 // const contactModel = require("./model/contact")
 // const story = require("./model/story")
+const contactModel = require("./model/contact")
+const story = require("./model/story")
 const PORT = 4444;
 dotenv.config();
 const uploadRoute = require('./routes/fileUpload')
