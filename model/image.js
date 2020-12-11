@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 
 const fileSchema = new mongoose.Schema({
-    Img: {
+    file: {
         data: Buffer, 
         contentType: String 
     },

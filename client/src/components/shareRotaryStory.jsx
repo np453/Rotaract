@@ -18,7 +18,7 @@ export default class ShareRotaryStory extends Component {
     };
 
     handleSubmit = async(e) => {
-        const {data} = this.state.data;
+        const data = this.state.data;
         e.preventDefault();
         const payload = {
             name  : data.name,
