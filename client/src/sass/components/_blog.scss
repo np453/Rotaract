@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+.container_blog_story {
+    width: 80%;
+    margin: 0 auto;
+    padding-right: 15rem;
+}
+
 .blog__left_section {
     padding-top: 5rem;
     height: 100vh;
@@ -55,6 +62,9 @@
                 padding-right: 0.7rem;
             }
         }
+        a {
+            color: #e1e1e1 !important;
+        }
 
     }
 
@@ -64,7 +74,7 @@
 .rs-timeline-item-dot {
     &:before {
         border-radius: 8px !important;
-        background-color: #0CA7EA !important;
+        background-color: #c4c4c4 !important;
         width: 13px;
         height: 13px;
     }
@@ -76,14 +86,26 @@
 /*timeline tail*/
 .rs-timeline-item-tail {
     width: 5px;
-    background-color: #0CA7EA !important;
+    background-color: #c4c4c4 !important;
 }
 .rs-timeline-item {
-    // background-color: #ffc600;
-    color: #0CA7EA;
     font-family:$font-1;
-    font-weight: 800;
-    // height: 120px;
+    h1 {
+        color: #494949;
+        font-size: 56px;
+        font-weight:900;
+        font-family: 'Ubuntu';
+    }
+    h6 {
+        color: #8B8B8B;
+        font-weight: 900;
+        font-size: 17px;
+    }
+    .blog_story_section {
+        color: #5E5858;
+        font-weight: 800;
+        font-family: 'Ubuntu';
+    }
 }
 
 

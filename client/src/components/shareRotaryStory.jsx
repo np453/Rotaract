@@ -23,12 +23,6 @@ export default class ShareRotaryStory extends Component {
         if(input.name === 'file')data[input.name] = input.files[0]
         this.setState({ data });
     };
-    // onChangeHandler= e =>{
-    //     let file = e.target.files[0]
-    //     this.setState({ selectedFile: file})
-    // }
-
-
 
     handleSubmit = async(e) => {
         e.preventDefault();
@@ -39,24 +33,26 @@ export default class ShareRotaryStory extends Component {
                 'content-type': 'multipart/form-data'
             }
         };
-        const payload = new FormData() 
-        payload.append('name', data.name)
-        payload.append('email', data.email)
-        payload.append('title', data.title)
-        payload.append('story', data.story)
-        payload.append('file', data.file)
+
+        //to add files uncomment below code. Data will be sent in form of formData, which requires use of multer to be parsed on server side
+        // const payload = new FormData() 
+        // payload.append('name', data.name)
+        // payload.append('email', data.email)
+        // payload.append('title', data.title)
+        // payload.append('story', data.story)
+        // payload.append('file', data.file)
         // for (let [key, value] of payload.entries()) { 
         //     console.log(key, value);
         //   }
-        // const payload = {
-        //     name  : data.name,
-        //     email : data.email,
-        //     title : data.title,
-        //     story : data.story,
-        //     file  : this.state.selectedFile 
-        // }
+        const payload = {
+            name  : data.name,
+            email : data.email,
+            title : data.title,
+            story : data.story,
+            file  : this.state.selectedFile 
+        }
         // console.log(payload.entries())
-        const res = await axios.post('http://localhost:4444/addstory',payload, config);
+        const res = await axios.post('http://localhost:4444/addstory',payload); // pass config as 3rd argument for passing files
         if(res.status === 200) {
             this.setState({
                 data : {
@@ -78,17 +74,6 @@ export default class ShareRotaryStory extends Component {
         //     }
         // })
     }
-    
-        // onClickHandler = () => {
-          
-        //   axios.post("http://localhost:4444/upload", data, config)
-        //     .then(res => { // then print response status
-        //       console.log('upload success')
-        //     })
-        //     .catch(err => { // then print response status
-        //         console.log('upload fail')
-        //     })
-        //   }
         removeSelectedFile = () => {
             this.setState({data : {file : null} })
         }
@@ -178,9 +163,15 @@ export default class ShareRotaryStory extends Component {
                             </div>
                             <div className="row d-flex justify-content-end">
                             <Link to='/'>
-                                <span className="toHome">
+                                <span className="toHome pr-4">
                                     <i className="fa fa-arrow-left"></i>
                                     <span className="bth">back to home</span>
+                                </span>
+                            </Link>
+                            <Link to='/blog'>
+                                <span className="toStory">
+                                    <span className="toS">View stories</span>
+                                    <i className="fa fa-arrow-right"></i>
                                 </span>
                             </Link>
                             </div>

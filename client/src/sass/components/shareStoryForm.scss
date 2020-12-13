@@ -129,6 +129,7 @@
                 display: none;
             }
             label {
+                display: none;
                 position: relative;
                 .file_upload_button {
                     position: absolute;
@@ -231,7 +232,26 @@
         transition: all 0.3s ease-in-out; 
     }
 }
-
+.toStory {
+    margin-top: 1.3rem;
+    font-family: $font-1;
+    color: rgba(#fff, 0.7);
+    font-weight: 600;
+    .toS {
+        padding-right: 0.3rem;
+    } 
+    &:hover {
+        .toS {
+            padding-right: 0.7rem;
+        }
+    }
+    .toS {
+        animation-name:arrowLeft;
+        animation-duration:0.5s;
+        animation-direction: alternate;
+        transition: all 0.3s ease-in-out; 
+    }
+}
 @keyframes arrowLeft {
     from {
         padding-left: 0rem;

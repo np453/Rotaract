@@ -1,9 +1,32 @@
 import React, { Component } from 'react'
 import { Timeline, Divider } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import BlogStory from '../components/common/blogStory'
 
 export default class Blog extends Component {
+    state = {
+        blogs : []
+    }
+
+    componentDidMount = async() => {
+        const {data:blogs} = await axios.get('http://localhost:4444/addstory')
+        this.setState({blogs})
+    }
+    
+
     render() {
+        const blogs = this.state.blogs === undefined ? [] : this.state.blogs
+        const blogStories = []
+        for (let i=0;i<blogs.length;i++) {
+            blogs[i].story.map(m => {
+                blogStories.push(
+                    <BlogStory name={m.name} title={m.title} story={m.story}/>
+                )
+            })
+        }
+
         return (
             <div className="container-fluid p-0">
                 <div className="row m-0">
@@ -26,39 +49,19 @@ export default class Blog extends Component {
                             </span>
                         </div>
                         <h4 className="blog__write_your_story">
-                            Write your story
+                            <Link to="/story">Write your story</Link>
                             <i className="fa fa-arrow-right"></i>
                         </h4>
                         <h4 className="blog__view_recent_blog">View recent blogs</h4>
                         <h4 className="blog__back_to_home">
                             <i className="fa fa-arrow-left"></i>
-                            Back to home
+                            <Link to="/">Back to home</Link>
                         </h4>
                         </div>
                     </div>
-                    <div className="col-md-9 offset-md-3 two">
-                        <div className="container">
-                        <Timeline>
-                            <Timeline.Item>
-                                <h1>Attack On Titan</h1>
-                                <h6>Published On 11.12.2020</h6>
-                                <h6>Devang Singh</h6>
-                                <div className="row">
-                                    <div className="col"></div>
-                                    <div className="col">
-                                    Attack on Titan (Japanese: 進撃の巨人, Hepburn: Shingeki no Kyojin) 
-                                        is a Japanese dark fantasy anime television series adapted from the manga of the same name by Hajime Isayama. 
-                                        It is set in a world where a part of humanity lives inside cities surrounded by enormous walls due to the Titans, 
-                                        gigantic humanoid beings who devour humans seemingly without any reason. The story follows the adventures of Eren Jaeger,
-                                        his friends Mikasa Ackerman and Armin Arlert, whose lives are changed forever after a Colossal Titan breaches the wall of 
-                                        their home town. Vowing revenge and to reclaim the world from the Titans, 
-                                        Eren and his friends join the Scout Regiment, an elite group of soldiers who fight Titans.
-                                    </div>
-                                </div>
-                            </Timeline.Item>
-                            <Timeline.Item></Timeline.Item>
-                            </Timeline>
-                        </div>
+                    <div className="col-md-9 p-5 offset-md-3 two">
+                        {blogStories.map(m => m)}
+                        
                     </div>
                 </div>
 
