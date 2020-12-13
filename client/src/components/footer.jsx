@@ -3,23 +3,45 @@ import { Link } from 'react-router-dom';
 
 const Footer = props => {
     return (
-        <div className="container mt-5">
-            <span className="mt-5 mb-5 col-md-12 d-flex footer__line"></span>
-            <footer>
-                <div className="row m-0">
-                    <div className="social__media__links col-md-4">
-                        <h4>Follow us on</h4>
-                        <h6>Facebook</h6>
-                        <h6>Instagram</h6>
-                        <h6>Twitter</h6>
+        <div className="foot__er">
+                    <div className="container-fluid p-0">
+                        <div className="row m-0">
+                            <div className="col-md-7 p-5">
+                                <div className="row">
+                                <div className="col-md-4">
+                                    <h3>Follow us on</h3>
+                                    <h6>Facebook</h6>
+                                    <h6>Instagram</h6>
+                                </div>
+                                <div className="col-md-4">
+                                    <h3>Important links</h3>
+                                    <h6>Home</h6>
+                                    <h6>Share your story</h6>
+                                </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4">
+                                <div className="container contact_form_container p-5">
+                                    <h2 className="mb-5">Contact us</h2>
+                                    <div className="wrapper mb-5">
+                                        <input spellcheck="false" name="name"  id="name" required="true" type="text"/>
+                                        <div className="placeholder">Your Name</div>
+                                    </div>
+                                    <div className="wrapper mb-5">
+                                        <input spellcheck="false" name="email"  id="email" required="true" type="text"/>
+                                        <div className="placeholder">Your email</div>
+                                    </div>
+                                    {/* <div className="wrapper mb-5">
+                                        <input spellcheck="false" name="contact"  id="contact" type="text"/>
+                                        <div className="placeholder">Where we can contact you</div>
+                                    </div> */}
+                                    <button className="btn_ ml-0">Submit</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-md-4">
-                        <Link to="/gallery">Visit our gallery</Link>
-                    </div>
-                    <div className="col-md-4"></div>
+                {/* <Footer /> */}
                 </div>
-            </footer>
-        </div>
     );
 }
 export default Footer;

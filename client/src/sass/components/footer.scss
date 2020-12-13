@@ -5,6 +5,72 @@
 
 }
 
+.foot__er {
+    z-index: 0;
+    background: url("../../assets/flat_hill.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    h1, h2, h3, h4, h5, h6 {
+        color: #111;
+    }
+
+    .contact_form_container {
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+
+        input {
+            &:focus {
+                outline: none;
+            }
+        }
+        // background-color: #fff;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        z-index: 9;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        // margin-top: -6rem;
+        .wrapper {
+            position: relative;
+            border: none !important;
+            outline: none !important;
+            input {
+                font-family: $font-1;
+                position: relative;
+                background: transparent;
+                border: 0;
+                border-bottom: 4px solid rgba(#111, 0.8);
+                font-weight: 700;
+                color:rgba(#111, 0.875);
+                &:focus+.placeholder {
+                    background: transparent;
+                    transform: translate(0.625rem, -10px) scale(0.8);
+                    outline: none !important;
+                }
+                &:valid+.placeholder {
+                    transform: translate(0.625rem, -10px) scale(0.8);
+                }
+            }
+            .placeholder {
+                color: rgba(#111, 0.6);
+                position: absolute;
+                z-index:0;
+                bottom: 1rem;
+                left: 0;
+                padding: 0 0 0.25rem;
+                font-weight: 700;
+                transform: translate(0.5rem, 15px);
+                transform-origin: 0% 0%;
+                background: transparent;
+                pointer-events: none;
+                transition: transform 0.35s, background 0.35s;
+            }
+        }
+    }
+}
+
+
 footer {
     a {
         text-decoration:none;
@@ -13,3 +79,4 @@ footer {
     font-family:$font-1;
     color:#5C5C5C;
 }
+

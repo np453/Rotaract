@@ -15,6 +15,7 @@ import shareSectionImg from '../assets/shareSectionImg.png';
 import worksimg1 from '../assets/works_img_1.jpg';
 import works_edu from '../assets/works_Edu.jpg';
 import Cube from '../components/common/cube';
+import ShareRotaryStory from '../components/shareRotaryStory'
 const Workcomponent = React.lazy(()=>import('../components/our_works'));
 
 export default class Homepage extends Component {
@@ -124,6 +125,8 @@ export default class Homepage extends Component {
             </div>
                 <div ref={this.form}><Form /></div>
                 <Cube />
+                <div ref={this.form} className="mt-5"><ShareRotaryStory /></div>
+                
                 <Footer />
             </div>
         )
