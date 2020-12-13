@@ -82,7 +82,7 @@ export default class ShareRotaryStory extends Component {
         const data = this.state.data
         const removeFile = data.file === null ? "" : <i className="fa pl-2 fa-times" onClick={this.removeSelectedFile} aria-hidden="true"></i>
         return (
-            <div className="container-fluid full__wrapper">
+            <div className="container-fluid full__wrapper p-3">
                 <div className="story_container mt-5 mb-5">
                     <div className="share_story_container">
                         <div className="row">

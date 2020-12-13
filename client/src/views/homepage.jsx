@@ -125,7 +125,7 @@ export default class Homepage extends Component {
             </div>
                 <div ref={this.form}><Form /></div>
                 <Cube />
-                <div ref={this.form} className="mt-5"><ShareRotaryStory /></div>
+                <div ref={this.form} className=""><ShareRotaryStory /></div>
                 
                 <Footer />
             </div>
