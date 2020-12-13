@@ -13,7 +13,7 @@
   position: relative;
   transform-style: preserve-3d;
 //   transform: translateZ(-100px);
-  animation: spin 10s infinite linear;
+  animation: spin 36s infinite linear;
   
   transition: all 5s;
   img{
@@ -44,33 +44,37 @@
   position: absolute;
   width: 14rem;
   height: 14rem;
-  border: 2px solid black;
+  border: 2px solid rgba(black, 0.4);
   line-height: 200px;
   font-size: 40px;
   font-weight: bold;
+  font-family: $font-1;
   color: white;
   text-align: center;
   outline: 0;
-  border: 1px solid rgba(#000, 1);
+  border: 1px solid rgba(#000, 0.1);
+  span {
+     opacity:0.5;
+  }
 }
 
 .cube__face--front  {
-     background: rgba(#001530, 0.65); 
+     background: rgba(#001530, 0.6); 
 }
 .cube__face--right  {
-     background: rgba(#001530, 0.65); 
+     background: rgba(#001530, 0.6); 
 }
 .cube__face--back   {
-     background: rgba(#001530, 0.65); 
+     background: rgba(#001530, 0.6); 
 }
 .cube__face--left   {
-     background: rgba(#001530, 0.65); 
+     background: rgba(#001530, 0.6); 
 }
 .cube__face--top    {
-     background: rgba(#001530, 0.65); 
+     background: rgba(#001530, 0.6); 
 }
 .cube__face--bottom {
-     background: rgba(#001530, 0.65); 
+     background: rgba(#001530, 0.6); 
      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 

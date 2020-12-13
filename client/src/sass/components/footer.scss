@@ -11,13 +11,15 @@
     // background-position: left;
     // background-repeat: no-repeat;
     // background-attachment: fixed;
-    background-color: #111;
+    // background-color: #111;
     h1, h2, h3, h4, h5, h6 {
         color: rgba(#fff, 0.8);
         font-family: $font-1;
     }
 
     .contact_form_container {
+        width: 120%;
+        
         // background: rgba(255, 255, 255, 0.14);
         // backdrop-filter: blur(40px);
         // -webkit-backdrop-filter: blur(40px);
@@ -31,11 +33,16 @@
                 outline: none;
             }
         }
-        background-color: rgba(#fff,1);
-        border-top-right-radius: 6px;
-        border-top-left-radius: 6px;
+        background: url("../../assets/svg_smile.png");
+        background-color: #fefefe;
+        background-position: center center;
+        background-repeat: no-repeat;
+        // background-attachment: fixed;
+        
+        border-radius:6px;
+        margin-right: 0;
         z-index: 9;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         margin-top: -2rem;
         .wrapper {
             position: relative;
@@ -46,7 +53,7 @@
                 position: relative;
                 background: transparent;
                 border: 0;
-                border-bottom: 4px solid rgba(#111, 0.8);
+                border-bottom: 2px solid rgba(#111, 0.5);
                 font-weight: 700;
                 color:rgba(#111, 0.875);
                 &:focus+.placeholder {

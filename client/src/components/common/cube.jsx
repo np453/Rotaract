@@ -11,14 +11,14 @@ export default class Cube extends Component {
                 <div class="scene">
                     <div class={this.state.classVal}>
                         <div class="cube__face cube__face--front"><img src={logo} className="img img-fluid" alt=""/></div>
-                        <div class="cube__face cube__face--back">Before</div>
-                        <div class="cube__face cube__face--right">Service</div>
-                        <div class="cube__face cube__face--left">Self</div>
+                        <div class="cube__face cube__face--back"><span>Before</span></div>
+                        <div class="cube__face cube__face--right"><span>Service</span></div>
+                        <div class="cube__face cube__face--left"><span>Self</span></div>
                         <div class="cube__face cube__face--top"> </div>
                         <div class="cube__face cube__face--bottom"> </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         )
     }
 }

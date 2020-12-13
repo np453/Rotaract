@@ -12,14 +12,14 @@ class Gallery extends Component {
         return (
             <div>
                  <div className="container-fluid p-0">
-                     <div className="row">
-                         <div className="col"><img className="img img-fluid" src={img1} alt=""/></div>
-                         <div className="col"><img className="img img-fluid" src={img2} alt=""/></div>
-                         <div className="col"><img className="img img-fluid" src={img3} alt=""/></div>
-                         <div className="col"><img className="img img-fluid" src={img4} alt=""/></div>
-                         <div className="col"><img className="img img-fluid" src={img5} alt=""/></div>
-                         <div className="col"><img className="img img-fluid" src={img6} alt=""/></div>
-                         <div className="col"><img className="img img-fluid" src={img7} alt=""/></div>
+                     <div className="row m-0">
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img1} alt=""/></div>
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img2} alt=""/></div>
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img3} alt=""/></div>
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img4} alt=""/></div>
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img5} alt=""/></div>
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img6} alt=""/></div>
+                         <div className="col-md-3 p-0"><img className="img img-fluid" src={img7} alt=""/></div>
                      </div>
                  </div>
             </div>
