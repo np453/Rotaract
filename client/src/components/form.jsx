@@ -49,7 +49,7 @@ export default class Form extends Component {
                             <label className="mr-3 form-labels" htmlFor="">Hello my name is</label>
                             <input id="name" name="name" value={data.name} onChange={this.handleChange} placeholder="Full name" className="mb-5" type="text"/>
                         </div>
-                        <textarea id="description" name="description" value={data.description} onChange={this.handleChange} className="mb-3" type="text" placeholder="describe your beautiful experiences" cols="30" rows="10" />
+                        {/* <textarea id="description" name="description" value={data.description} onChange={this.handleChange} className="mb-3" type="text" placeholder="describe your beautiful experiences" cols="30" rows="10" /> */}
                         <div className="row form-group m-0">
                             <label className="mr-3 form-labels" htmlFor="">We/I heard about you from</label>
                             <input id="source" name="source" value={data.source} onChange={this.handleChange} placeholder="source" className="mb-5" type="text"/>
