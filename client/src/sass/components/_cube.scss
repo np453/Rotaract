@@ -16,6 +16,9 @@
   animation: spin 10s infinite linear;
   
   transition: all 5s;
+  img{
+       opacity: 0.6;
+  }
 }
 
 // .cube.show-front  {
