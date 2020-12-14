@@ -55,7 +55,7 @@ export default class Homepage extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="landingPageNavbar">
                         <div className="navbar-nav ml-auto align-items-center">
-                            <Link onClick={this.executeFormScroll}><span className="mr-3 nav__link">Join us</span></Link>
+                            {/* <Link onClick={this.executeFormScroll}><span className="mr-3 nav__link">Join us</span></Link> */}
                             <Link onClick={this.executeGalleryScroll}><span className="nav__link">View gallery</span></Link>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ export default class Homepage extends Component {
             {/*our vision*/}
             <div className="container our__vision__section mt-5 mb-5">
                 <h1 className="main__heading">Our vision</h1>
-                <div className="col-md-5">
+                <div className="col-md-7">
                 <span className="section__para">
                 The motto of the club is service before self. We aim not only to serve
                  society in any possible way but create a feeling of care,

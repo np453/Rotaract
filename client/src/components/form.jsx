@@ -39,7 +39,7 @@ export default class Form extends Component {
     }
     render() {
         let data = this.state.data;
-        console.log(data);
+        // console.log(data);
         return (
             <div className="container mt-5 rounded-lg form__container">
                 <h1>Build up your presence in our Initiative</h1>

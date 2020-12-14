@@ -24,7 +24,7 @@ router.post('/',function(req, res) {
       //  file.save().then(()=>{
       //  res.send({message:"uploaded successfully"})
       //  })
-      console.log(req.file)
+      // console.log(req.file)
       let fullpath = req.file.path;
       let imgData  = fs.readFileSync(fullpath).toString('base64')
       let file = new File()

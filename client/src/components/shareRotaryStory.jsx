@@ -28,11 +28,12 @@ export default class ShareRotaryStory extends Component {
         e.preventDefault();
         const data = this.state.data;    
         // console.log(data)    
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        };
+
+        // const config = {
+        //     headers: {
+        //         'content-type': 'multipart/form-data'
+        //     }
+        // };
 
         //to add files uncomment below code. Data will be sent in form of formData, which requires use of multer to be parsed on server side
         // const payload = new FormData() 
@@ -48,11 +49,10 @@ export default class ShareRotaryStory extends Component {
             name  : data.name,
             email : data.email,
             title : data.title,
-            story : data.story,
-            file  : this.state.selectedFile 
+            story : data.story
         }
         // console.log(payload.entries())
-        const res = await axios.post('http://localhost:4444/addstory',payload); // pass config as 3rd argument for passing files
+        const res = await axios.post('http://localhost:4444/rotary_story',payload); // pass config as 3rd argument for passing files
         if(res.status === 200) {
             this.setState({
                 data : {
@@ -62,7 +62,7 @@ export default class ShareRotaryStory extends Component {
                     story:"",
                     file: null
                 }
-            }, () => {toast.success("Response received! We'll contact you shortly")})
+            }, () => {toast.success("Response received! Your works are valuable to mankind keep helping :)")})
         }
         // this.setState({
         //     data:{
@@ -148,12 +148,12 @@ export default class ShareRotaryStory extends Component {
                                 <div className="col-md-3">
                                     <h3>Get in touch</h3>
                                     <h5>email</h5>
-                                    <p>rotaractmnnit@gmail.com</p>
+                                    <a href="mailto:rotaractmnnit4@gmail.com"><p>rotaractmnnit@gmail.com</p></a>
                                 </div>
                                 <div className="col-md-3">
                                     <h3>social media</h3>
-                                    <h5>facebook</h5>
-                                    <h5>instagram</h5>
+                                    <a  href="https://www.facebook.com/rotaractmnnit"><h5>facebook</h5></a>
+                                    {/* <Link to=""><h5>instagram</h5></Link> */}
                                 </div>
                                 <div className="col-md-3">
                                     <h3>Where we are</h3>

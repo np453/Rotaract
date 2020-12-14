@@ -25,7 +25,7 @@ class Image extends React.Component {
     axios.post("http://localhost:4444/ourworks", data, {
         })
         .then(res => { 
-        console.log(res.statusText)
+        // console.log(res.statusText)
     })
     //   console.log(response)
   }
@@ -54,7 +54,7 @@ class Image extends React.Component {
   
 
   render() {
-    console.log(this.state.data)
+    // console.log(this.state.data)
       return (
         <div className="container">
         <div className="row">

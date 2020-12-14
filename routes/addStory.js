@@ -97,7 +97,7 @@ router.post('/', async(req, res) => {
                         story:{
                             "name":req.body.name,
                             "title":req.body.title,
-                            "story":req.body.story,
+                            "story":req.body.story
                         }
                     }
                 }).exec()

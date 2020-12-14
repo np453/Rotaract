@@ -16,8 +16,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single('file')
 
 router.post('/', upload , async(req, res) => {
-        console.log(req.body)
-        console.log(req.file)
+        // console.log(req.body)
+        // console.log(req.file)
         let fullpath = req.file.path;
         let imgData  = fs.readFileSync(fullpath).toString('base64')
         let work = new ourWorks({
@@ -43,7 +43,7 @@ router.post('/', upload , async(req, res) => {
 
 router.get('/', async(req, res) => {
   const allWorks = await ourWorks.find({ })
-  console.log(allWorks)
+  // console.log(allWorks)
   const works = [];
   for(let i=0;i<allWorks.length;i++) {
     works.push( {title:allWorks[i].title, buffer:Buffer.from(allWorks[i].file.data.buffer, 'base64').toString('base64'), contentType:allWorks[i].file.contentType} )

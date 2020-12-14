@@ -6,7 +6,7 @@ export default class Admin extends Component {
     }
     uploadFile = e => {
         const file = e.target.files
-        console.log(file)
+        // console.log(file)
         this.setState({file})
     }
     handleSubmit = async(e) => {
@@ -22,7 +22,7 @@ export default class Admin extends Component {
         console.log(data)
     }
     render() {
-        console.log(this.state.file)
+        // console.log(this.state.file)
         return (
             <div>
                 <form className="form" onSubmit={this.handleSubmit}>
