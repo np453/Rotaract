@@ -16,9 +16,10 @@ class Gallery extends Component {
         const imData = [];
         const {data:Img} = await axios.get("http://localhost:4444/upload/img")
             Img.map(m => {
-                imData.push(URL.createObjectURL(new Blob([m.file.data], {type:m.file.contentType})))
+                imData.push(URL.createObjectURL(new Blob([m.file.data.data], {type:m.file.contentType})))
             })
         this.setState({galleryImg:imData})
+        console.log(imData)
     }
     
     render() {
