@@ -1,6 +1,16 @@
+.blob__container__section {
+    background: url("../../assets/blob_back.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-origin: content-box;
+}
+
 .intro__section {
-    margin-top:5rem;
+    margin-top:10rem;
     font-family:$font-1;
+    color: rgba(#000, 0.7);
+    font-weight: 700;
     .intro__section__heading {
         font-size:4rem;
     }
@@ -13,12 +23,23 @@
 @media (min-width:121px) and (max-width:375px) {
     .intro__section {
     margin-top:3rem;
+    color: rgba(#000, 0.7);
+    font-weight: 700;
     .intro__section__heading {
         font-size:1.5rem;
-    }
+        }
     .intro__section__para {
         font-size:0.8rem;
+        }
     }
+
+    .blob__container__section {
+        background: url("../../assets/back_blob_mobile.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    .brand {
+        color: rgba(#000, 0.7);
     }
 
 }
@@ -26,12 +47,20 @@
 @media (min-width:375.98px) and (max-width:550px) {
     .intro__section {
     margin-top:3rem;
+    color: rgba(#000, 0.7);
+    font-weight: 700;
     .intro__section__heading {
         font-size:2rem;
     }
     .intro__section__para {
         font-size:1.1rem;
     }
+    }
+    .blob__container__section {
+        background: url("../../assets/back_blob_mobile.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-attachment: fixed;
     }
 }
 

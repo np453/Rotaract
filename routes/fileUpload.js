@@ -48,7 +48,7 @@ router.post('/',function(req, res) {
 
 router.get('/img/:imgId', async(req, res) => {
     const imData = await File.findById({_id:req.params.imgId})
-    console.log(imData.file.data.buffer)
+    // console.log(imData.file.data.buffer)
           // console.log(results.file.data.buffer); //<-- Output below
     res.setHeader('content-type', imData.file.contentType);
     res.send(Buffer.from(imData.file.data.buffer, 'base64'));
@@ -56,5 +56,22 @@ router.get('/img/:imgId', async(req, res) => {
     // res.send(im.file);
     
  });
+
+ router.get('/img', async(req, res) => {
+  const imData = await File.find({ })
+  const img = [];
+  // for(let i=0;i<imData.length;i++) {
+  //   img.push( Buffer.from(imData[i].file.data.buffer, 'base64') )
+  // }
+  // console.log(imData.file.data.buffer)
+        // console.log(results.file.data.buffer); //<-- Output below
+  // res.setHeader('content-type', imData.file.contentType);
+  // res.send(Buffer.from(imData.file.data.buffer, 'base64'));
+  res.send(imData)
+
+  // res.setHeader('content-type', im.contentType);
+  // res.send(im.file);
+  
+});
 
 module.exports = router;

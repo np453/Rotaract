@@ -40,7 +40,8 @@ export default class Homepage extends Component {
     render() {
         return (
             <div className="container-fluid p-0">
-                <div className="container-fluid">
+                <div className="blob__container__section">
+                <div className="container-fluid mt-3">
                 <div className="container-lg  p-0">
                 <nav className="navbar  navbar-expand-lg m-0 p-0">
                     <span className="navbar-brand brand">Rotaract Club MNNIT</span>
@@ -78,6 +79,7 @@ export default class Homepage extends Component {
             </div>
                 </div>
             </div>
+                </div>
 
             {/*our vision*/}
             <div className="container our__vision__section mt-5 mb-5">
