@@ -1,3 +1,11 @@
 .img_gallery_container {
     background-color: #111;
+    img {
+        filter: grayscale(100%);
+    }
+    span {
+        font-family: $font-1;
+        color: rgba(white, 0.8);
+        font-weight: 800;
+    }
 }
