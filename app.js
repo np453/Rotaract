@@ -8,6 +8,7 @@ const dotenv = require('dotenv');
 const fs = require('fs');
 const File = require("./model/image")
 const User = require('./model/user')
+const ourWorks = require('./routes/ourWorks')
 // const contactModel = require("./model/contact")
 // const story = require("./model/story")
 const contactModel = require("./model/contact")
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/upload', uploadRoute) //file upload route
 app.use('/addstory', addStory)
+app.use('/ourworks', ourWorks)
 
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));

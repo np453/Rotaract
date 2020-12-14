@@ -35,6 +35,7 @@ export default class Homepage extends Component {
     executeStoryFormScroll = () => this.storyForm.current.scrollIntoView()
     componentDidMount() {
         ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
+        ScrollReveal().reveal('.share__experience__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
     }
     
     render() {
@@ -119,8 +120,10 @@ export default class Homepage extends Component {
                   
                 </div>
             </div> */}
+
+
             {/*share your rotary experience section*/}
-            <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
+            <div className="container-fluid p-0 share__experience__section">
                 <div className="row m-0">
                     <div className="col-md-6 p-0">
                         <img src={shareSectionImg} className="img img-fluid w-100" alt=""/>
@@ -142,6 +145,7 @@ export default class Homepage extends Component {
                     <Gallery />
             </div>
                 <Cube />
+                <div className="d-flex justify-content-end p-2 arrow_to_top"><i className="fa fa-2x fa-arrow-up"></i></div>
                 <div ref={this.storyForm} className=""><ShareRotaryStory /></div>
                 
                 {/* <Footer /> */}

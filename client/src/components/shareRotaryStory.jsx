@@ -184,8 +184,7 @@ export default class ShareRotaryStory extends Component {
                             <div className="row m-0 d-flex justify-content-end">
                             <Link to='/'>
                                 <span className="toHome pr-4">
-                                    <i className="fa fa-arrow-left"></i>
-                                    <span className="bth">back to home</span>
+                                    <i className="fa fa-2x fa-arrow-up"></i>
                                 </span>
                             </Link>
                             </div>

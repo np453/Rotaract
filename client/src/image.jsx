@@ -5,21 +5,24 @@ import { Document, Page } from 'react-pdf';
 class Image extends React.Component {
 
       state ={
-        selectedFile: null,
+        data : {
+          title:"",
+          file: null,
+        }
       };
-
-      componentDidMount = async() => {
-          const {data} = await axios.get('http://localhost:4444/img/5fd1374ed580d4051fd39355')
-          console.log(data)
-          this.setState({selectedFile:data})
-      }
       
-
+      handleRadio = ({currentTarget:input}) => {
+        const data = {...this.state.data};
+        data[input.name] = input.value;
+        if(input.name === 'file')data[input.name] = input.files[0]
+        this.setState({ data });
+    };
   onFormSubmit = async(e) => {
       e.preventDefault();
       const data = new FormData() 
-      data.append('file', this.state.selectedFile)
-    axios.post("http://localhost:4444/upload", data, {
+      data.append('title', this.state.data.title)
+      data.append('file', this.state.data.file)
+    axios.post("http://localhost:4444/ourworks", data, {
         })
         .then(res => { 
         console.log(res.statusText)
@@ -27,19 +30,20 @@ class Image extends React.Component {
     //   console.log(response)
   }
 
-  onChangeHandler= e =>{
-    let file = e.target.files[0]
-    this.setState({ selectedFile: file})
-  }
+  // onChangeHandler= e =>{
+  //   let file = e.target.files[0]
+  //   this.setState({ selectedFile: file})
+  // }
   onClickHandler = () => {
       const data = new FormData() 
-        data.append('file', this.state.selectedFile)
+        data.append('title', this.state.data.title)
+        data.append('file', this.state.data.file)
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
             }
         };
-      axios.post("http://localhost:4444/upload", data, config)
+      axios.post("http://localhost:4444/ourworks", data, config)
         .then(res => { // then print response status
           console.log('upload success')
         })
@@ -50,14 +54,14 @@ class Image extends React.Component {
   
 
   render() {
-    console.log(this.state.selectedFile)
+    console.log(this.state.data)
       return (
         <div className="container">
         <div className="row">
           <div className="offset-md-3 col-md-6">
              <div className="form-group files">
-              <label>Upload Your File </label>
-              <input type="file" className="form-control" onChange={this.onChangeHandler}/>
+              <input type="text" name="title" onChange={this.handleRadio}/>
+              <input name="file" type="file" className="form-control" onChange={this.handleRadio}/>
             </div>  
             <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
 

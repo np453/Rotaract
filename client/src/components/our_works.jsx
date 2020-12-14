@@ -9,8 +9,20 @@ import shareExpimg2 from '../assets/shareExp2.png';
 import shareSectionImg from '../assets/shareSectionImg.png';
 import img1 from '../assets/works_img_1.jpg';
 import img from '../assets/works_Edu.jpg';
+import axios from 'axios';
+import ScrollReveal from 'scrollreveal';
 
 class Ourworks extends Component {
+    state = {
+        works: []
+    }
+
+    componentDidMount = async() => {
+        const {data:works} = await axios.get("http://localhost:4444/ourworks/")
+        this.setState({works})
+        ScrollReveal().reveal('.img__gallery',{scale:0.85, reset:true }  );
+    }
+    
     render() {
         return (
         <div>
@@ -18,38 +30,15 @@ class Ourworks extends Component {
                 <h1 className="main__works__heading">Our Works</h1>
                 <div className="col-md-12">
                   <div className="row m-0">
-                    <div className="col-md-4">
+                        {this.state.works.map(m => 
+                        <div className="col-md-4 p-0 m-0">
                             <div className="works_wrapper">
-                                <img src={img} className="img img-fluid" alt=""/>
-                                <h5 className="text-center">Supporting education</h5>
+                                <img className="img img-fluid " src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
+                                <h5 className="text-center">{m.title}</h5>
                             </div>
-                        </div>
-                        <div className="col-md-4"><div className="works_wrapper">
-                                <img src={img} className="img img-fluid" alt=""/>
-                                <h5 className="text-center">Supporting education</h5>
-                            </div>
-                        </div>
-                        <div className="col-md-4"><div className="works_wrapper">
-                                <img src={img} className="img img-fluid" alt=""/>
-                                <h5 className="text-center">Supporting education</h5>
-                            </div>
-                        </div>
+                        </div>    
+                        )}
                   </div>
-                  {/* <div className="row mt-4">
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works" />
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                  </div>
-                  <span className="load_more" onClick={this.handleloadmore()}>Load More...</span> */}
                 </div>
             </div>
         </div>

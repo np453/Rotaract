@@ -22,6 +22,12 @@
     }
 }
 
+
+.arrow_to_top {
+    position: absolute;
+    right:0;
+    color: #fff;
+}
 @keyframes viewGalleryButton {
     from {
         padding-bottom:1.5rem;
