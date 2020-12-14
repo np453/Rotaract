@@ -43,7 +43,7 @@ export default class Homepage extends Component {
         ScrollReveal().reveal('.main__heading, .section__para',{origin:'left', distance: '130px', viewFactor: 0.5, reset:true }  );
         ScrollReveal().reveal('.our_vision_background_wrapper',{origin:'top', distance: '130px', viewFactor: 0.5, reset:true }  );
         ScrollReveal().reveal('.our__works_',{origin:'left', distance: '130px', viewFactor: 0.6 }  );
-        ScrollReveal().reveal('.s__b__s', { afterReveal:this.renderTypwriter, viewFactor:0.6 } );
+        ScrollReveal().reveal('.s__b__s', { afterReveal:this.renderTypwriter, viewFactor:0.6, reset:true } );
     }
     renderTypwriter = () => {
         this.setState({animate1 :1, show:false})
@@ -144,7 +144,7 @@ export default class Homepage extends Component {
             </div>
             <div className="container-fluid s__b__s">
                 <div className="row">
-                    <div className="col-md-6 d-flex justify-content-center align-items-center">
+                    <div className="col-md-6 d-flex justify-content-center">
                         {titleHead}
                     </div>
                     <div className="col-md-6">

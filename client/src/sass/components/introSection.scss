@@ -48,7 +48,9 @@
     .brand {
         color: rgba(#000, 0.7);
     }
-
+    .type__heading_1 {
+        display: none;
+    }
 }
 
 @media (min-width:375.98px) and (max-width:550px) {
@@ -69,6 +71,11 @@
         background-position: right;
         background-attachment: fixed;
     }
+    .type__heading_1 {
+        // padding: 4rem 0;
+        font-size: 55px;
+    }
+
 }
 
 @media (min-width:550.98px) and (max-width:767.98px) {
@@ -80,6 +87,10 @@
     .intro__section__para {
         font-size:1.3rem;
     }
+    }
+    .type__heading_1 {
+        // padding: 4rem 0;
+        font-size: 55px;
     }
 
 }
@@ -95,7 +106,7 @@
     }
     }
     .type__heading_1 {
-        padding: 4rem 0;
+        // padding: 4rem 0;
         font-size: 64px;
     }
 }
