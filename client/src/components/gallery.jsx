@@ -19,6 +19,7 @@ class Gallery extends Component {
                 imData.push(URL.createObjectURL(new Blob([m.file.data], {type:m.file.contentType})))
             })
         this.setState({galleryImg:imData})
+        console.log(imData)
     }
     
     render() {
