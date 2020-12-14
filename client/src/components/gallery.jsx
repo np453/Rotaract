@@ -1,37 +1,43 @@
 import React, { Component,Suspense,lazy } from 'react';
-import Imgix from 'react-imgix';
-import img1 from '../assets/shareStoryFormBackImg.png'
-import img2 from '../assets/shareExp2.png'
-import img3 from '../assets/works_old.jpg'
-import img4 from '../assets/works_Edu.jpg'
-import img5 from '../assets/works_img_1.jpg'
-import img6 from '../assets/shareExp_img.png'
-import img7 from '../assets/shareExp_img.png'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ScrollReveal from 'scrollreveal';
 class Gallery extends Component {
     state = {
         galleryImg : []
     }
     componentDidMount = async() => {
-        const imData = [];
         const {data:Img} = await axios.get("http://localhost:4444/upload/img")
-            // Img.map(m => {
-            //     imData.push(URL.createObjectURL(new Blob([m.file.data.data], {type:m.file.contentType})))
-            // })
-            console.log(Img)
         this.setState({galleryImg:Img})
-        // console.log(imData)
+        ScrollReveal().reveal('.img_gallery_container',{scale:0.85 }  );
+
     }
     
     render() {
         return (
             <div>
-                 <div className="container-fluid img_gallery_container p-0">
-                     <h4 className="p-2">Image gallery</h4>
+                 <div className="container-fluid img_gallery_container p-0">          
+                 <nav className="navbar  navbar-expand-lg m-0 p-0">
+                    <span className="navbar-brand p-2">image gallery</span>
+                    {/* <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#landingPageNavbar" aria-controls="landingPageNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="icon-bar top-bar"></span>
+                        <span className="icon-bar middle-bar"></span>
+                        <span className="icon-bar bottom-bar"></span>
+                    </button> */}
+                    <div className="collapse navbar-collapse" id="landingPageNavbar">
+                        <div className="navbar-nav ml-auto align-items-center">
+                            <span className="mr-3 p-2 nav__link"><span className="pr-2">check out more images at</span> 
+                            <Link to=""><svg className="" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0H18C19.1046 0 20 0.89543 20 2V18C20 19.1046 19.1046 20 18 20H2C0.89543 20 0 19.1046 0 18V2C0 0.89543 0.89543 0 2 0ZM2 2V18H18V2H2ZM9.13306 10.0044H11V16H13V10.0044H14.9824V8.00439H13V7C13 6.44772 13.4477 6 14 6H15V4H14C12.3431 4 11 5.34315 11 7V8.00439H9.13306V10.0044Z" fill="#66A5C9"/>
+                            </svg></Link>
+                            </span>
+                        </div>
+                    </div>
+                </nav>
                      <div className="row m-0 p-1">
                          {this.state.galleryImg.map(m => 
-                                <div className="col-md-4 p-1">
-                                    <img className="img img-fluid" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
+                                <div className="col-md-3 p-1">
+                                    <img className="img img-fluid img__gallery" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
                                 </div>
                             )}
                      </div>
