@@ -161,7 +161,7 @@ export default class ShareRotaryStory extends Component {
                                     <p>MNNIT Allahabad</p> 
                                 </div>
                             </div>
-                            <div className="row m-0 d-flex justify-content-around">
+                            {/* <div className="row m-0 d-flex justify-content-around">
                             <div className="mt-5 foot__er">
                             <div className="contact_form_container p-5">
                                     <h2 className="">Contact us</h2>
@@ -173,14 +173,14 @@ export default class ShareRotaryStory extends Component {
                                         <input spellcheck="false" name="email"  id="email" required="true" type="text"/>
                                         <div className="placeholder">Your email</div>
                                     </div>
-                                    {/* <div className="wrapper mb-5">
+                                    <div className="wrapper mb-5">
                                         <input spellcheck="false" name="contact"  id="contact" type="text"/>
                                         <div className="placeholder">Where we can contact you</div>
-                                    </div> */}
+                                    </div>
                                     <button className="btn_ ml-0">Submit</button>
                                 </div>
                             </div>
-                            </div>
+                            </div> */}
                             <div className="row m-0 d-flex justify-content-end">
                             <Link to='/'>
                                 <span className="toHome pr-4">
