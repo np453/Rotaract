@@ -30,9 +30,11 @@ export default class Homepage extends Component {
     form = React.createRef();
     gallery = React.createRef();
     storyForm = React.createRef();
+    topSection = React.createRef();
     executeFormScroll = () => this.form.current.scrollIntoView()
     executeGalleryScroll = () => this.gallery.current.scrollIntoView()
     executeStoryFormScroll = () => this.storyForm.current.scrollIntoView()
+    executeStoryTopScroll = () => this.topSection.current.scrollIntoView()
     componentDidMount() {
         ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
         ScrollReveal().reveal('.share__experience__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
@@ -40,7 +42,7 @@ export default class Homepage extends Component {
     
     render() {
         return (
-            <div className="container-fluid p-0">
+            <div ref={this.topSection} className="container-fluid p-0">
                 <div className="blob__container__section">
                 <div className="container-fluid mt-3">
                 <div className="container-lg  p-0">
@@ -145,7 +147,7 @@ export default class Homepage extends Component {
                     <Gallery />
             </div>
                 <Cube />
-                <div className="d-flex justify-content-end p-2 arrow_to_top"><i className="fa fa-2x fa-arrow-up"></i></div>
+                <div onClick={this.executeStoryTopScroll} className="d-flex justify-content-end p-2 arrow_to_top"><i className="fa fa-2x fa-arrow-up"></i></div>
                 <div ref={this.storyForm} className=""><ShareRotaryStory /></div>
                 
                 {/* <Footer /> */}

@@ -27,6 +27,9 @@
     position: absolute;
     right:0;
     color: #fff;
+    &:hover {
+        cursor: pointer;
+    }
 }
 @keyframes viewGalleryButton {
     from {
