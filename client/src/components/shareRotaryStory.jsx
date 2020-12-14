@@ -5,6 +5,7 @@ import axios from 'axios';
 import upLoadImg from '../assets/fileUpload.svg'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollReveal from 'scrollreveal';
 export default class ShareRotaryStory extends Component {
     state = {
         data : {
@@ -145,7 +146,7 @@ export default class ShareRotaryStory extends Component {
                     <div className="contact__details">
                         <div className="container">
                             <div className="row m-0 d-flex justify-content-center">
-                                <div className="col-md-3">
+                                <div className="col-md-4">
                                     <h3>Get in touch</h3>
                                     <h5>email</h5>
                                     <a href="mailto:rotaractmnnit4@gmail.com"><p>rotaractmnnit@gmail.com</p></a>
@@ -181,13 +182,6 @@ export default class ShareRotaryStory extends Component {
                                 </div>
                             </div>
                             </div> */}
-                            <div className="row m-0 d-flex justify-content-end">
-                            <Link to='/'>
-                                <span className="toHome pr-4">
-                                    <i className="fa fa-2x fa-arrow-up"></i>
-                                </span>
-                            </Link>
-                            </div>
                         </div>
                     </div>
                 </div>
