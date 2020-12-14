@@ -82,7 +82,7 @@ export default class ShareRotaryStory extends Component {
         const data = this.state.data
         const removeFile = data.file === null ? "" : <i className="fa pl-2 fa-times" onClick={this.removeSelectedFile} aria-hidden="true"></i>
         return (
-            <div className="container-fluid full__wrapper p-3">
+            <div className="container-fluid full__wrapper p-3 pt-5">
                 <div className="story_container mt-5 mb-5">
                     <div className="share_story_container">
                         <div className="row">
@@ -144,7 +144,7 @@ export default class ShareRotaryStory extends Component {
                     <ToastContainer autoClose={3000}/>
                     <div className="contact__details">
                         <div className="container">
-                            <div className="row d-flex justify-content-center">
+                            <div className="row m-0 d-flex justify-content-center">
                                 <div className="col-md-3">
                                     <h3>Get in touch</h3>
                                     <h5>email</h5>
@@ -161,17 +161,31 @@ export default class ShareRotaryStory extends Component {
                                     <p>MNNIT Allahabad</p> 
                                 </div>
                             </div>
-                            <div className="row d-flex justify-content-end">
+                            <div className="row m-0 d-flex justify-content-around">
+                            <div className="mt-5 foot__er">
+                            <div className="contact_form_container p-5">
+                                    <h2 className="">Contact us</h2>
+                                    <div className="wrapper mb-5">
+                                        <input spellcheck="false" name="name"  id="name" required="true" type="text"/>
+                                        <div className="placeholder">Your Name</div>
+                                    </div>
+                                    <div className="wrapper mb-5">
+                                        <input spellcheck="false" name="email"  id="email" required="true" type="text"/>
+                                        <div className="placeholder">Your email</div>
+                                    </div>
+                                    {/* <div className="wrapper mb-5">
+                                        <input spellcheck="false" name="contact"  id="contact" type="text"/>
+                                        <div className="placeholder">Where we can contact you</div>
+                                    </div> */}
+                                    <button className="btn_ ml-0">Submit</button>
+                                </div>
+                            </div>
+                            </div>
+                            <div className="row m-0 d-flex justify-content-end">
                             <Link to='/'>
                                 <span className="toHome pr-4">
                                     <i className="fa fa-arrow-left"></i>
                                     <span className="bth">back to home</span>
-                                </span>
-                            </Link>
-                            <Link to='/blog'>
-                                <span className="toStory">
-                                    <span className="toS">View stories</span>
-                                    <i className="fa fa-arrow-right"></i>
                                 </span>
                             </Link>
                             </div>

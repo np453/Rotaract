@@ -28,7 +28,11 @@ export default class Homepage extends Component {
 
     }
     form = React.createRef();
+    gallery = React.createRef();
+    storyForm = React.createRef();
     executeFormScroll = () => this.form.current.scrollIntoView()
+    executeGalleryScroll = () => this.gallery.current.scrollIntoView()
+    executeStoryFormScroll = () => this.storyForm.current.scrollIntoView()
     componentDidMount() {
         ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
     }
@@ -48,7 +52,7 @@ export default class Homepage extends Component {
                     <div className="collapse navbar-collapse" id="landingPageNavbar">
                         <div className="navbar-nav ml-auto align-items-center">
                             <Link onClick={this.executeFormScroll}><span className="mr-3 nav__link">Join us</span></Link>
-                            <Link to="/gallery"><span className="nav__link">View gallery</span></Link>
+                            <Link onClick={this.executeGalleryScroll}><span className="nav__link">View gallery</span></Link>
                         </div>
                     </div>
                 </nav>
@@ -59,8 +63,13 @@ export default class Homepage extends Component {
             <div className="container intro__section d-flex justify-content-center">
                 <div className="row">
                     <Typist cursor={{show:false}} avgTypingDelay={50} ><span className="col-md-12 d-flex justify-content-center intro__section__heading">Let’s share our experience together</span></Typist>
-                    <span className="col-md-12 d-flex justify-content-center intro__section__para">Rotaract Club of MNNIT is an  international service organization  under the Rotary International, for all who wish to create a difference in the society today.<br></br> 
-                    We were established on 28  May,2015 under the club  sponsorship of Rotary Club of  Allahabad Elite, Uttar Pradesh, India.  From a humble 15 members team  size we have grown to a 60+ member  team.</span>
+                    <span className="col-md-12 d-flex justify-content-center intro__section__para">
+                    About the club
+                    Rotaract Club of MNNIT is an  international service organization  under the Rotary International,
+                     for  all who wish to create a difference  in the society today.<br/>
+                    We were established on 28  May,2015 under the club  sponsorship of Rotary Club of  Allahabad Elite,
+                     Uttar Pradesh, India.  From a humble 15 members team  size we have grown to a 60+ member  team.
+                    </span>
                     <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
                 <div className="row d-flex justify-content-center">
                     <img src={shareExpimg} className="img img-fluid top_img" alt=""/>
@@ -110,31 +119,32 @@ export default class Homepage extends Component {
             </div> */}
             {/*share your rotary experience section*/}
             <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
-                <div className="row">
+                <div className="row m-0">
                     <div className="col-md-6 p-0">
                         <img src={shareSectionImg} className="img img-fluid w-100" alt=""/>
                     </div>
                     <div className="col-md-6 shareExpSection d-flex justify-content-center align-items-center">
-                        <div className="row">
+                        <div className="row m-0">
                             <div className="col-md-12">
                             <h1>Share your experience with us</h1>
                         
                             </div>
                             <div className="col-md-12">
-                            <Link to="/story"><button className="btn_" >Share your rotary story</button></Link>
+                            <Link onClick={this.executeStoryFormScroll}><button className="btn_" >Share your rotary story</button></Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <Suspense fallback={
-                <div>Loading...</div>
-                }>
+            <div ref={this.gallery}>
+                <Suspense fallback={
+                    <div>Loading...</div>
+                    }>
                     <Gallery />
                 </Suspense>
-                {/* <div ref={this.form}><Form /></div> */}
+            </div>
                 <Cube />
-                <div ref={this.form} className=""><ShareRotaryStory /></div>
+                <div ref={this.storyForm} className=""><ShareRotaryStory /></div>
                 
                 {/* <Footer /> */}
             </div>

@@ -22,7 +22,7 @@ const Footer = props => {
                             </div>
                             <div className="col-md-4">
                                 <div className="container contact_form_container p-5">
-                                    <h2 className="mb-5">Contact us</h2>
+                                    <h2 className="">Contact us</h2>
                                     <div className="wrapper mb-5">
                                         <input spellcheck="false" name="name"  id="name" required="true" type="text"/>
                                         <div className="placeholder">Your Name</div>
