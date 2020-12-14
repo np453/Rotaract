@@ -11,3 +11,16 @@
         font-size: 1.5rem;
     }
 }
+
+.img_gallery_navbar {
+    margin-left: auto;
+    .img_gallery_link {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:121px) and (max-width:1202px) {
+    .img_gallery_navbar {
+        margin-left: 0;
+    }
+}

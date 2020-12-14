@@ -6,6 +6,7 @@ import Admin from './components/admin';
 import ShareRotaryStory from './components/shareRotaryStory';
 import Image from './image'
 import Blog from './components/blogs';
+import TestPage from './components/common/testPage';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/story" component={ShareRotaryStory} />
           <Route path="/image" component={Image} />
           <Route path="/blog" component={Blog} />
+          <Route path="/test" component={TestPage} />
         </switch>
       </Router>
       

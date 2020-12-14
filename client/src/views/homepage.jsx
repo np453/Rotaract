@@ -1,5 +1,6 @@
 import React, { Component,Suspense,lazy } from 'react'
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import '../sass/main.scss';
 import logo from '../assets/logo.png';
 import hill from '../assets/hill.svg';
@@ -22,11 +23,11 @@ const Workcomponent = React.lazy(()=>import('../components/our_works'));
 
 export default class Homepage extends Component {
     state={
-
+        scrollTop:0,
+        animate1:0,
+        show:true
     }
-    handleloadmore=()=>{
 
-    }
     form = React.createRef();
     gallery = React.createRef();
     storyForm = React.createRef();
@@ -35,16 +36,25 @@ export default class Homepage extends Component {
     executeGalleryScroll = () => this.gallery.current.scrollIntoView()
     executeStoryFormScroll = () => this.storyForm.current.scrollIntoView()
     executeStoryTopScroll = () => this.topSection.current.scrollIntoView()
+    
     componentDidMount() {
         ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px', viewFactor: 0.5, reset:true }  );
         ScrollReveal().reveal('.share__experience__section',{origin:'left', distance: '130px', viewFactor: 0.5, reset:true }  );
         ScrollReveal().reveal('.main__heading, .section__para',{origin:'left', distance: '130px', viewFactor: 0.5, reset:true }  );
         ScrollReveal().reveal('.our_vision_background_wrapper',{origin:'top', distance: '130px', viewFactor: 0.5, reset:true }  );
         ScrollReveal().reveal('.our__works_',{origin:'left', distance: '130px', viewFactor: 0.6 }  );
-    
+        ScrollReveal().reveal('.s__b__s', { afterReveal:this.renderTypwriter, viewFactor:0.6 } );
     }
-    
+    renderTypwriter = () => {
+        this.setState({animate1 :1, show:false})
+        return (
+            <Typist>
+                <h1>Service before self</h1>
+            </Typist>
+        );
+    }
     render() {
+        const titleHead = (this.state.animate1 === 1) ?  <Typist cursor={{show:false}}><h1 className="type__heading_1">Service<br/>before self</h1></Typist> : null
         return (
             <div ref={this.topSection} className="container-fluid p-0">
                 <div className="blob__container__section">
@@ -66,7 +76,7 @@ export default class Homepage extends Component {
                 </nav>
                 </div>   
             </div>
-
+            
             {/*intro section*/}
             <div className="container intro__section d-flex justify-content-center">
                 <div className="row">
@@ -132,10 +142,20 @@ export default class Homepage extends Component {
                     </div>
                 </div>
             </div>
+            <div className="container-fluid s__b__s">
+                <div className="row">
+                    <div className="col-md-6 d-flex justify-content-center align-items-center">
+                        {titleHead}
+                    </div>
+                    <div className="col-md-6">
+                        <Cube/>
+                    </div>
+                </div>
+            </div>
             <div ref={this.gallery}>
                     <Gallery />
             </div>
-                <Cube />
+                
                 <div onClick={this.executeStoryTopScroll} className="d-flex justify-content-end p-2 arrow_to_top"><i className="fa fa-2x fa-arrow-up"></i></div>
                 <div ref={this.storyForm} className=""><ShareRotaryStory /></div>
                 

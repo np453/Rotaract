@@ -20,8 +20,8 @@ class Ourworks extends Component {
     render() {
         return (
         <div>
-            <div className="container our__works__section ">
-                <h1 className="main__works__heading">Our Works</h1>
+            <div className="container our__works__section pb-4">
+                <h1 className="main__works__heading p-2">Our Works</h1>
                 <div className="col-md-12 works__wrapper">
                   <div className="row m-0">
                       

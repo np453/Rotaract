@@ -1,6 +1,6 @@
 .scene {
-  width: 10rem;
-  height: 10rem;
+  width: 20rem;
+  height: 20rem;
   border: 1px solid #CCC;
   margin: 80px;
   perspective: 700px;
@@ -8,8 +8,8 @@
 }
 
 .cube {
-  width: 14rem;
-  height: 14rem;
+  width: 20rem;
+  height: 20rem;
   margin: 0 auto;
   position: relative;
   transform-style: preserve-3d;
@@ -43,8 +43,8 @@
 
 .cube__face {
   position: absolute;
-  width: 14rem;
-  height: 14rem;
+  width: 18rem;
+  height: 18rem;
   border: 2px solid rgba(black, 0.4);
   line-height: 200px;
   font-size: 40px;
@@ -80,22 +80,22 @@
 }
 
 .cube__face--front  {
-     transform: rotateY(  0deg) translateZ(7rem); 
+     transform: rotateY(  0deg) translateZ(9rem); 
 }
 .cube__face--right  {
-     transform: rotateY( 90deg) translateZ(7rem); 
+     transform: rotateY( 90deg) translateZ(9rem); 
 }
 .cube__face--back   {
-     transform: rotateY(180deg) translateZ(7rem); 
+     transform: rotateY(180deg) translateZ(9rem); 
 }
 .cube__face--left   {
-     transform: rotateY(-90deg) translateZ(7rem); 
+     transform: rotateY(-90deg) translateZ(9rem); 
 }
 .cube__face--top    {
-     transform: rotateX( 90deg) translateZ(7rem); 
+     transform: rotateX( 90deg) translateZ(9rem); 
 }
 .cube__face--bottom {
-     transform: rotateX(-90deg) translateZ(7rem); 
+     transform: rotateX(-90deg) translateZ(9rem); 
 }
 
 @keyframes spin {

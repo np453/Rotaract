@@ -20,6 +20,12 @@
     }
 }
 
+.type__heading_1 {
+    padding: 2rem;
+    font-size: 90px;
+    font-family: $font-1;
+    font-weight:900;
+}
 
 @media (min-width:121px) and (max-width:375px) {
     .intro__section {
@@ -87,5 +93,9 @@
     .intro__section__para {
         font-size:1.5rem;
     }
+    }
+    .type__heading_1 {
+        padding: 4rem 0;
+        font-size: 64px;
     }
 }
