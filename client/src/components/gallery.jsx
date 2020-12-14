@@ -28,7 +28,7 @@ class Gallery extends Component {
             <div>
                  <div className="container-fluid img_gallery_container p-0">
                      <h4 className="p-2">Image gallery</h4>
-                     <div className="row m-0 p-1">
+                     <div className="row m-0 p-1"> 
                          {this.state.galleryImg.map(m => 
                                 <div className="col-md-4 p-1">
                                     <img className="img img-fluid" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
