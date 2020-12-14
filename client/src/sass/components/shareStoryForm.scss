@@ -323,7 +323,21 @@
             padding: 0 0 0.25rem;
         }
     }
-
+    .contact__details {
+        padding-left:1.3rem;
+        h3 {
+            margin-top: 1.3rem;
+            margin-bottom: 0.2rem;
+            font-size:20px;
+        }
+        h5 {
+            font-size:16px;
+        }
+        p {
+            font-size: 14px;
+            padding-right: 1.3rem;
+        }
+    }
 
 }
 
@@ -374,6 +388,21 @@
         }
         .placeholder {
             padding: 0 0 0.25rem;
+        }
+    }
+    .contact__details {
+        padding-left:1.3rem;
+        h3 {
+            margin-top: 1.3rem;
+            margin-bottom: 0.2rem;
+            font-size:20px;
+        }
+        h5 {
+            font-size:16px;
+        }
+        p {
+            font-size: 16px;
+            padding-right: 1.3rem;
         }
     }
 
@@ -429,6 +458,21 @@
             padding: 0 0 0.25rem;
         }
     }
+    .contact__details {
+        padding-left:1.3rem;
+        h3 {
+            margin-top: 1.3rem;
+            margin-bottom: 0.2rem;
+            // font-size:20px;
+        }
+        h5 {
+            // font-size:16px;
+        }
+        p {
+            font-size: 16px;
+            padding-right: 1.3rem;
+        }
+    }
 
 }
 
@@ -465,6 +509,24 @@
         }
         .placeholder {
             padding: 0 0 0.25rem;
+        }
+    }
+    .contact__details {
+        padding-left:1.3rem;
+        h3 {
+            margin-top: 1.3rem;
+            margin-bottom: 0.2rem;
+            // font-size:20px;
+        }
+        h5 {
+            // font-size:16px;
+        }
+        p {
+            font-size: 16px;
+            padding-right: 1.3rem;
+        }
+        .email {
+            margin-top: 1.4rem;
         }
     }
 
@@ -505,6 +567,12 @@
             padding: 0 0 0.25rem;
         }
     }
+    .contact__details {
+        p {
+            font-size: 16px;
+            padding-right: 1.3rem;
+        }
+    }
 
 }
 
@@ -541,6 +609,11 @@
         }
         .placeholder {
             padding: 0 0 0.25rem;
+        }
+    }
+    .contact__details {
+        p {
+            font-size: 16px;
         }
     }
 

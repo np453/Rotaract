@@ -36,8 +36,12 @@ export default class Homepage extends Component {
     executeStoryFormScroll = () => this.storyForm.current.scrollIntoView()
     executeStoryTopScroll = () => this.topSection.current.scrollIntoView()
     componentDidMount() {
-        ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
-        ScrollReveal().reveal('.share__experience__section',{origin:'bottom', distance: '130px',viewFactor: 0.6 }  );
+        ScrollReveal().reveal('.our__works__section',{origin:'bottom', distance: '130px', viewFactor: 0.5, reset:true }  );
+        ScrollReveal().reveal('.share__experience__section',{origin:'left', distance: '130px', viewFactor: 0.5, reset:true }  );
+        ScrollReveal().reveal('.main__heading, .section__para',{origin:'left', distance: '130px', viewFactor: 0.5, reset:true }  );
+        ScrollReveal().reveal('.our_vision_background_wrapper',{origin:'top', distance: '130px', viewFactor: 0.5, reset:true }  );
+        ScrollReveal().reveal('.our__works_',{origin:'left', distance: '130px', viewFactor: 0.6 }  );
+    
     }
     
     render() {
@@ -55,7 +59,7 @@ export default class Homepage extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="landingPageNavbar">
                         <div className="navbar-nav ml-auto align-items-center">
-                            <Link onClick={this.executeFormScroll}><span className="mr-3 nav__link">Join us</span></Link>
+                            <Link onClick={this.executeStoryFormScroll}><span className="mr-3 nav__link">Join us</span></Link>
                             <Link onClick={this.executeGalleryScroll}><span className="nav__link">View gallery</span></Link>
                         </div>
                     </div>
@@ -75,7 +79,7 @@ export default class Homepage extends Component {
                      Uttar Pradesh, India.  From a humble 15 members team  size we have grown to a 60+ member  team.
                     </span>
                     <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
-                <div className="row d-flex justify-content-center">
+                <div className="row m-0 d-flex justify-content-center">
                     <img src={shareExpimg} className="img img-fluid top_img" alt=""/>
                     {/* <img src={shareExpimg2} className="img2 img img-fluid w-100" alt=""/> */}
                 </div>
@@ -85,10 +89,11 @@ export default class Homepage extends Component {
                 </div>
 
             {/*our vision*/}
-            <div className="container our__vision__section mt-5 mb-5">
+            <div className="container-fluid our_vision_background_wrapper">
+            <div className="container our__vision__section">
                 <h1 className="main__heading">Our vision</h1>
                 <div className="col-md-5">
-                <span className="section__para">
+                <span className="section__para section__para__ourVision">
                 The motto of the club is service before self. We aim not only to serve
                  society in any possible way but create a feeling of care,
                  responsibility and duty among the students of the college.
@@ -96,33 +101,17 @@ export default class Homepage extends Component {
                 </span>
                 </div>
             </div>
-            {/*Our Works*/}
-                <Suspense fallback={
-                <div>Loading...</div>
-                }>
-                    <Workcomponent />
-                </Suspense>
-            {/* <div className="container our__works__section mt-5 mb-5">
-                <h1 className="main__works__heading">Our Works</h1>
-                <div className="col-md-12">
-                  <div className="row">
-                      <div className="col-md-4 our_work_container">
-                          <img src={works_edu} className="w-100 img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Supporting Education</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works"/>
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                      <div className="col-md-4 our_work_container">
-                          <img src={shareExpimg2} className="img img-fluid img_works" />
-                          <h1 className="img_placeholder">Edu</h1>
-                      </div>
-                  </div>
-                  
-                </div>
-            </div> */}
+            </div>
 
+
+            {/*Our Works*/}
+            <div className="our__works_">
+            <Suspense fallback={
+            <div>Loading...</div>
+            }>
+                <Workcomponent />
+            </Suspense>
+            </div>
 
             {/*share your rotary experience section*/}
             <div className="container-fluid p-0 share__experience__section">
@@ -133,7 +122,7 @@ export default class Homepage extends Component {
                     <div className="col-md-6 shareExpSection d-flex justify-content-center align-items-center">
                         <div className="row m-0">
                             <div className="col-md-12">
-                            <h1>Share your experience with us</h1>
+                            <h1>Share your rotary story with us</h1>
                         
                             </div>
                             <div className="col-md-12">
