@@ -159,7 +159,7 @@ export default class ShareRotaryStory extends Component {
                                 <div className="col-md-3">
                                     <h3>Where we are</h3>
                                     <h5>Address</h5>
-                                    <p>MNNIT Allahabad</p> 
+                                    <a href="https://www.google.com/maps/place/Motilal+Nehru+National+Institute+of+Technology,+Allahabad/@25.4920102,81.8639163,15z/data=!4m5!3m4!1s0x0:0x6690dd2de3a1415b!8m2!3d25.4920102!4d81.8639163"><p>MNNIT Allahabad</p></a> 
                                 </div>
                             </div>
                             {/* <div className="row m-0 d-flex justify-content-around">
