@@ -8,7 +8,7 @@ export default class Cube extends Component {
     render() {
         return (                
             <div className="container d-flex justify-content-center">
-                <div class="scene">
+                <div class="scene justify-content-center">
                     <div class={this.state.classVal}>
                         <div class="cube__face cube__face--front"><img src={logo} className="img img-fluid" alt=""/></div>
                         <div class="cube__face cube__face--back">Before</div>

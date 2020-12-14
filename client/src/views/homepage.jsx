@@ -59,7 +59,8 @@ export default class Homepage extends Component {
             <div className="container intro__section d-flex justify-content-center">
                 <div className="row">
                     <Typist cursor={{show:false}} avgTypingDelay={50} ><span className="col-md-12 d-flex justify-content-center intro__section__heading">Let’s share our experience together</span></Typist>
-                    <span className="col-md-12 d-flex justify-content-center intro__section__para">We are ... text that will explain about the club</span>
+                    <span className="col-md-12 d-flex justify-content-center intro__section__para">Rotaract Club of MNNIT is an  international service organization  under the Rotary International, for all who wish to create a difference in the society today.<br></br> 
+                    We were established on 28  May,2015 under the club  sponsorship of Rotary Club of  Allahabad Elite, Uttar Pradesh, India.  From a humble 15 members team  size we have grown to a 60+ member  team.</span>
                     <div className="container-fluid mt-5 mb-5 p-0 share__experience__section">
                 <div className="row d-flex justify-content-center">
                     <img src={shareExpimg} className="img img-fluid top_img" alt=""/>
@@ -74,9 +75,10 @@ export default class Homepage extends Component {
                 <h1 className="main__heading">Our vision</h1>
                 <div className="col-md-5">
                 <span className="section__para">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Nulla blanditiis quo culpa repudiandae recusandae quisquam, quidem sed 
-                    exercitationem praesentium nobis eum aut tempore dolorem reiciendis similique quia! Ipsam, voluptates vitae.
+                The motto of the club is service before self. We aim not only to serve
+                 society in any possible way but create a feeling of care,
+                 responsibility and duty among the students of the college.
+                   
                 </span>
                 </div>
             </div>
@@ -134,7 +136,7 @@ export default class Homepage extends Component {
                 <Cube />
                 <div ref={this.form} className=""><ShareRotaryStory /></div>
                 
-                <Footer />
+                {/* <Footer /> */}
             </div>
         )
     }
