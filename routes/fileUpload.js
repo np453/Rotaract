@@ -60,14 +60,15 @@ router.get('/img/:imgId', async(req, res) => {
  router.get('/img', async(req, res) => {
   const imData = await File.find({ })
   const img = [];
-  // for(let i=0;i<imData.length;i++) {
-  //   img.push( Buffer.from(imData[i].file.data.buffer, 'base64') )
-  // }
+  for(let i=0;i<imData.length;i++) {
+    // console.log(Buffer.from(imData[i].file.data.buffer, 'base64').toString('base64'))
+    img.push( {buffer:Buffer.from(imData[i].file.data.buffer, 'base64').toString('base64'), contentType:imData[i].file.contentType} )
+  }
   // console.log(imData.file.data.buffer)
         // console.log(results.file.data.buffer); //<-- Output below
   // res.setHeader('content-type', imData.file.contentType);
   // res.send(Buffer.from(imData.file.data.buffer, 'base64'));
-  res.send(imData)
+  res.send(img)
 
   // res.setHeader('content-type', im.contentType);
   // res.send(im.file);

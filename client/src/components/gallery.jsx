@@ -15,20 +15,24 @@ class Gallery extends Component {
     componentDidMount = async() => {
         const imData = [];
         const {data:Img} = await axios.get("http://localhost:4444/upload/img")
-            Img.map(m => {
-                imData.push(URL.createObjectURL(new Blob([m.file.data.data], {type:m.file.contentType})))
-            })
-        this.setState({galleryImg:imData})
-        console.log(imData)
+            // Img.map(m => {
+            //     imData.push(URL.createObjectURL(new Blob([m.file.data.data], {type:m.file.contentType})))
+            // })
+            console.log(Img)
+        this.setState({galleryImg:Img})
+        // console.log(imData)
     }
     
     render() {
         return (
             <div>
-                 <div className="container-fluid p-0">
-                     <div className="row m-0">
+                 <div className="container-fluid img_gallery_container p-0">
+                     <h4 className="p-2">Image gallery</h4>
+                     <div className="row m-0 p-1">
                          {this.state.galleryImg.map(m => 
-                                <img src={m} alt=""/>
+                                <div className="col-md-4 p-1">
+                                    <img className="img img-fluid" src={`data:${m.contentType};base64,`+m.buffer} alt=""/>
+                                </div>
                             )}
                      </div>
                  </div>
