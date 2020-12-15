@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import ShareStoryImg from '../assets/shareStory_img.png';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import upLoadImg from '../assets/fileUpload.svg'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ScrollReveal from 'scrollreveal';
 export default class ShareRotaryStory extends Component {
     state = {
         data : {

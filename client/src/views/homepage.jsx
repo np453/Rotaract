@@ -1,20 +1,11 @@
-import React, { Component,Suspense,lazy } from 'react'
+import React, { Component,Suspense } from 'react'
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import '../sass/main.scss';
-import logo from '../assets/logo.png';
-import hill from '../assets/hill.svg';
 import Typist from 'react-typist';
-import { motion } from 'framer-motion';
 import ScrollReveal from 'scrollreveal';
-import Form from '../components/form';
-import Footer from '../components/footer';
-import svg1 from '../assets/rotaract_svg_1.svg';
 import shareExpimg from '../assets/topSectionImg.png';
-import shareExpimg2 from '../assets/shareExp2.png';
 import shareSectionImg from '../assets/shareSectionImg.png';
-import worksimg1 from '../assets/works_img_1.jpg';
-import works_edu from '../assets/works_Edu.jpg';
 import Cube from '../components/common/cube';
 import ShareRotaryStory from '../components/shareRotaryStory';
 import Gallery from '../components/gallery'
