@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import { Document, Page } from 'react-pdf';
 class Image extends React.Component {
 
       state ={

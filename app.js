@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const multer = require('multer')
 const cors = require('cors');
+const AWS = require('aws-sdk');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
@@ -28,6 +29,9 @@ app.use(express.json());
 app.use('/upload', uploadRoute) //file upload route
 app.use('/addstory', addStory)
 app.use('/ourworks', ourWorks)
+
+
+AWS.config.update({region: 'us-west-2'});
 
 
 //connect to DB
