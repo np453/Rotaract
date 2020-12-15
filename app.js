@@ -32,15 +32,24 @@ app.use('/ourworks', ourWorks)
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 
 //Node mailer section
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
+// let transporter = nodemailer.createTransport({
+//     host:"mmtp.iitk.ac.in",
+//     port:25,
+//     auth: {
+//         user: "sdevang@iitk.ac.in",
+//         pass: process.env.PASSWORD 
+//     }
+//     }
+// );
+var transporter = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: 2525,
     auth: {
-        user: "rotaractmnnit4@gmail.com",
-        pass: process.env.PASSWORD 
+      user: process.env.USER,
+      pass: process.env.PASS
     }
-    }
-);
-let from = `Rotaract Club MNNIT Allahabad <rotaractmnnit4@gmail.com>`
+  });
+let from = `Rotaract Club MNNIT Allahabad <sdevang@iitk.ac.in>`
 
 // Join us section
 // app.post("/contact",async(req,res)=>{
@@ -69,7 +78,7 @@ app.post("/rotary_story",async(req,res)=>{
 // node mailer transporter
     let mailOptions = {
         from: from, 
-        to: "namanpatel453@gmail.com", 
+        to: 'namanpatel453@gmail.com, devang.iitk@gmail.com',
         subject: `New Rotary Story`,
         text: `
         
