@@ -1,5 +1,4 @@
-import React, { Component,Suspense,lazy } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import axios from 'axios';
 import ScrollReveal from 'scrollreveal';
 class Gallery extends Component {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ScrollReveal from 'scrollreveal';
 import axios from 'axios';
 export default class Form extends Component {
 
