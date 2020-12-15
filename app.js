@@ -27,7 +27,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/upload', uploadRoute) //file upload route
 app.use('/addstory', addStory)
 app.use('/ourworks', ourWorks)
-
+app.use(express.json());
+app.use(express.static("client/build"));
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 //connect to DB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 
