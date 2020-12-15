@@ -99,7 +99,7 @@ export default class Homepage extends Component {
                 </div>
 
             {/*our vision*/}
-            <div className="container-fluid our_vision_background_wrapper">
+            <div className="container our_vision_background_wrapper">
             <div className="container our__vision__section">
                 <h1 className="main__heading">Our vision</h1>
                 <div className="col-md-5">
