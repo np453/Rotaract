@@ -10,7 +10,7 @@ class Ourworks extends Component {
     }
 
     componentDidMount = async() => {
-        const {data:works} = await axios.get("http://localhost:4444/ourworks/")
+        const {data:works} = await axios.get("/ourworks/")
         this.setState({works})
         // ScrollReveal().reveal('.our_works_',{scale:0.85, reset:true }  );
         ScrollReveal().reveal('.main__works__heading',{origin:"top", distance:"130px", scale:0.85, reset:true }  );

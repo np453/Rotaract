@@ -22,7 +22,7 @@ class Image extends React.Component {
       const data = new FormData() 
       data.append('title', this.state.data.title)
       data.append('file', this.state.data.file)
-    axios.post("http://localhost:4444/ourworks", data, {
+    axios.post("/ourworks", data, {
         })
         .then(res => { 
         // console.log(res.statusText)

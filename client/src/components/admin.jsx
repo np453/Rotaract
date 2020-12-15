@@ -18,7 +18,7 @@ export default class Admin extends Component {
                 'content-type': 'multipart/form-data'
             }
         };
-        const {data} = await axios.post("http://localhost:4444/upload",formData,config)
+        const {data} = await axios.post("/upload",formData,config)
         console.log(data)
     }
     render() {

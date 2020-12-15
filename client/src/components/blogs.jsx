@@ -11,7 +11,7 @@ export default class Blog extends Component {
     }
 
     componentDidMount = async() => {
-        const {data:blogs} = await axios.get('http://localhost:4444/addstory')
+        const {data:blogs} = await axios.get('/addstory')
         this.setState({blogs})
     }
     
