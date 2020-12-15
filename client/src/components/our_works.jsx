@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ScrollReveal from 'scrollreveal';
-import OurWorks from '../components/common/ourWorks'
 
 class Ourworks extends Component {
     state = {
