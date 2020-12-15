@@ -32,14 +32,22 @@ app.use('/ourworks', ourWorks)
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Database is connected!"));
 
 //Node mailer section
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
+// let transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: "rotaractmnnit4@gmail.com",
+//         pass: process.env.PASSWORD 
+//     }
+//     }
+// );
+var transporter = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: 2525,
     auth: {
-        user: "rotaractmnnit4@gmail.com",
-        pass: process.env.PASSWORD 
+      user: "adf4ee44d30d9d",
+      pass: "d8ee980db2e93c"
     }
-    }
-);
+  });
 let from = `Rotaract Club MNNIT Allahabad <rotaractmnnit4@gmail.com>`
 
 // Join us section
