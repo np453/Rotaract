@@ -7,7 +7,7 @@ class Gallery extends Component {
         galleryImg : []
     }
     componentDidMount = async() => {
-        const {data:Img} = await axios.get("http://localhost:4444/upload/img")
+        const {data:Img} = await axios.get("/upload/img")
         this.setState({galleryImg:Img})
         ScrollReveal().reveal('.img__gallery',{scale:0.85, reset:true }  );
 

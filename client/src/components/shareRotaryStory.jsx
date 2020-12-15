@@ -53,7 +53,7 @@ export default class ShareRotaryStory extends Component {
             story : data.story
         }
         // console.log(payload.entries())
-        const res = await axios.post('http://localhost:4444/rotary_story',payload); // pass config as 3rd argument for passing files
+        const res = await axios.post('/rotary_story',payload); // pass config as 3rd argument for passing files
         if(res.status === 200) {
             this.setState({
                 data : {
